@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "simplytools:block/clean_end_stone",
+    "side": "simplytools:block/clean_end_stone",
+    "top": "simplytools:block/clean_end_stone"
+  }
+}

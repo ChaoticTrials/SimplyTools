@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "m": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "pattern": [
+    "mmm",
+    "mmm",
+    " m "
+  ],
+  "result": {
+    "item": "simplytools:diamond_excavator_head"
+  }
+}

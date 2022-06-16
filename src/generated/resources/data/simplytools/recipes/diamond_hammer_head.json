@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "m": {
+      "tag": "forge:gems/diamond"
+    }
+  },
+  "pattern": [
+    "mm ",
+    "mmm",
+    " mm"
+  ],
+  "result": {
+    "item": "simplytools:diamond_hammer_head"
+  }
+}

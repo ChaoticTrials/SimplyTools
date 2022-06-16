@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "tag": "forge:end_stones"
+  },
+  "result": "simplytools:clean_end_stone"
+}

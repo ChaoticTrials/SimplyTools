@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "m": {
+      "tag": "forge:cobblestone"
+    }
+  },
+  "pattern": [
+    "mm ",
+    "mmm",
+    " mm"
+  ],
+  "result": {
+    "item": "simplytools:stone_hammer_head"
+  }
+}

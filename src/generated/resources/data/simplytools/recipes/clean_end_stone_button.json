@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "simplytools:clean_end_stone"
+    }
+  ],
+  "result": {
+    "item": "simplytools:clean_end_stone_button"
+  }
+}

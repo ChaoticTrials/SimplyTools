@@ -1,0 +1,51 @@
+modLoader="javafml"
+loaderVersion="[41,)"
+license="The Apache License, Version 2.0"
+issueTrackerURL="https://github.com/MelanX/SimplyTools/issues"
+
+[[mods]]
+modId="simplytools"
+version="${file.jarVersion}"
+displayName="Simply Tools"
+updateJSONURL="https://assets.melanx.de/updates/simply-tools.json"
+authors="MelanX"
+description="""
+Hammers and Excavators to mine 3x3 areas
+Install MoreVanillaTools for more different materials
+Install MoreVanillaLib for special effects ingame
+"""
+
+[[dependencies.simplytools]]
+    modId="forge"
+    mandatory=true
+    versionRange="[41.0.35,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.simplytools]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19,1.20)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vanillaaiots]]
+    modId="libx"
+    mandatory=true
+    versionRange="[1.19-4.0.3,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.vanillaaiots]]
+    modId="morevanillatools"
+    mandatory=false
+    versionRange="[1.19-5.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.vanillaaiots]]
+    modId="morevanillalib"
+    mandatory=false
+    versionRange="[1.19-4.0.0,)"
+    ordering="AFTER"
+    side="BOTH"

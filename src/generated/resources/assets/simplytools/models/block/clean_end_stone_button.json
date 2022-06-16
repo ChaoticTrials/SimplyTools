@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "simplytools:block/clean_end_stone"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "h": {
+      "item": "simplytools:diamond_excavator_head"
+    },
+    "s": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "  h",
+    " s ",
+    "s  "
+  ],
+  "result": {
+    "item": "simplytools:diamond_excavator"
+  }
+}

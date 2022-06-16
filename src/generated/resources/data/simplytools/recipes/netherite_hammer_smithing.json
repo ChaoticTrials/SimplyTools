@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "tag": "forge:ingots/netherite"
+  },
+  "base": {
+    "item": "simplytools:diamond_hammer"
+  },
+  "result": {
+    "item": "simplytools:netherite_hammer"
+  }
+}
