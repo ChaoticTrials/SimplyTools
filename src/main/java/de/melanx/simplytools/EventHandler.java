@@ -14,7 +14,12 @@ public class EventHandler {
     @SubscribeEvent
     public void onAnvilUpdate(AnvilUpdateEvent event) {
         if (event.getLeft().getItem() instanceof BaseTool) {
+            ItemStack addition = event.getRight();
             ItemStack output = event.getLeft().copy();
+            if (!output.getItem().isValidRepairItem(event.getLeft(), addition)) {
+                return;
+            }
+
             int damageReduction = Math.min(output.getDamageValue(), output.getMaxDamage() / 7);
             if (damageReduction <= 0) {
                 event.setOutput(ItemStack.EMPTY);
