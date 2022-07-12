@@ -26,8 +26,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.event.DrawSelectionEvent;
-import net.minecraftforge.client.event.RenderLevelLastEvent;
+import net.minecraftforge.client.event.RenderHighlightEvent;
+import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Iterator;
@@ -37,7 +37,7 @@ import java.util.Iterator;
 public class ClientEventHandler {
 
     @SubscribeEvent
-    public void renderBlockHighlights(DrawSelectionEvent.HighlightBlock event) {
+    public void renderBlockHighlights(RenderHighlightEvent.Block event) {
         Minecraft mc = Minecraft.getInstance();
         Level level = mc.level;
         Player player = mc.player;
@@ -93,11 +93,11 @@ public class ClientEventHandler {
     }
 
     @SubscribeEvent
-    public void renderBlockDamageProgress(RenderLevelLastEvent event) {
+    public void renderBlockDamageProgress(RenderLevelStageEvent event) {
         // validate required variables are set
         Minecraft mc = Minecraft.getInstance();
         MultiPlayerGameMode controller = mc.gameMode;
-        if (controller == null || !controller.isDestroying()) {
+        if (controller == null || !controller.isDestroying() || event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRIPWIRE_BLOCKS) {
             return;
         }
         Level level = mc.level;
