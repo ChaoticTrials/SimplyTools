@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "simplytools:paper_bundle_compress"
+        "recipe": "simplytools:paper_bundle_decompress"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "simplytools:paper_bundle_compress"
+      "simplytools:paper_bundle_decompress"
     ]
   }
 }

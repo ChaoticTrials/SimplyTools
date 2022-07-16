@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "a": {
-      "item": "simplytools:paper_bundle"
+      "item": "minecraft:paper"
     }
   },
   "pattern": [
@@ -11,6 +11,6 @@
     "aaa"
   ],
   "result": {
-    "item": "minecraft:paper"
+    "item": "simplytools:paper_bundle"
   }
 }

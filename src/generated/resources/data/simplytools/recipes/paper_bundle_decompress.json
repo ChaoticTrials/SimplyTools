@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:paper"
+      "item": "simplytools:paper_bundle"
     }
   ],
   "result": {
     "count": 9,
-    "item": "simplytools:paper_bundle"
+    "item": "minecraft:paper"
   }
 }

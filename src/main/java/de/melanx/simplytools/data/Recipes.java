@@ -26,7 +26,7 @@ public class Recipes extends RecipeProviderBase implements CraftingExtension, Co
 
     @Override
     protected void setup() {
-        this.compress(ModItems.paperBundle, Items.PAPER);
+        this.compress(Items.PAPER, ModItems.paperBundle);
         this.blasting(Tags.Items.END_STONES, ModBlocks.cleanEndStone, 0.1f, 200);
 
         this.createHammer(ModItems.woodenHammer, Ingredient.of(ItemTags.PLANKS));
