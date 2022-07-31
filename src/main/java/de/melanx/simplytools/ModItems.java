@@ -20,6 +20,7 @@ public class ModItems {
 
     public static final Item boneHammer = ToolsCompat.makeItem(0, -3.0f, ToolMaterials.BONE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item coalHammer = ToolsCompat.makeItem(0, -3.0f, ToolMaterials.COAL, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
+    public static final Item copperHammer = ToolsCompat.makeItem(0, -3.0f, ToolMaterials.COPPER, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item emeraldHammer = ToolsCompat.makeItem(0, -3.0f, ToolMaterials.EMERALD, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item enderHammer = ToolsCompat.makeItem(0, -3.0f, ToolMaterials.ENDER, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item fieryHammer = ToolsCompat.makeItem(0, -3.0f, ToolMaterials.FIERY, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
@@ -43,6 +44,7 @@ public class ModItems {
 
     public static final Item boneExcavator = ToolsCompat.makeItem(0, -3.2f, ToolMaterials.BONE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item coalExcavator = ToolsCompat.makeItem(0, -3.2f, ToolMaterials.COAL, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
+    public static final Item copperExcavator = ToolsCompat.makeItem(0, -3.2f, ToolMaterials.COPPER, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item emeraldExcavator = ToolsCompat.makeItem(0, -3.2f, ToolMaterials.EMERALD, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item enderExcavator = ToolsCompat.makeItem(0, -3.2f, ToolMaterials.ENDER, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item fieryExcavator = ToolsCompat.makeItem(0, -3.2f, ToolMaterials.FIERY, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));

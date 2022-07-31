@@ -40,6 +40,7 @@ public class ToolTags extends CommonTagsProviderBase {
 
                 case BONE -> this.item(ModTags.Items.BONE_TOOLS).add(item);
                 case COAL -> this.item(ModTags.Items.COAL_TOOLS).add(item);
+                case COPPER -> this.item(ModTags.Items.COPPER_TOOLS).add(item);
                 case EMERALD -> this.item(ModTags.Items.EMERALD_TOOLS).add(item);
                 case ENDER -> this.item(ModTags.Items.ENDER_TOOLS).add(item);
                 case FIERY -> this.item(ModTags.Items.FIERY_TOOLS).add(item);

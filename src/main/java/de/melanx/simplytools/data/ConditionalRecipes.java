@@ -30,6 +30,7 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
     protected void setup() {
         this.createHammer(ModItems.boneHammer, Ingredient.of(Tags.Items.BONES));
         this.createHammer(ModItems.coalHammer, Ingredient.of(Items.COAL));
+        this.createHammer(ModItems.copperHammer, Ingredient.of(Tags.Items.INGOTS_COPPER));
         this.createHammer(ModItems.emeraldHammer, Ingredient.of(Tags.Items.GEMS_EMERALD));
         this.createHammer(ModItems.enderHammer, Ingredient.of(ModBlocks.cleanEndStone));
         this.createHammer(ModItems.fieryHammer, Ingredient.of(Items.MAGMA_CREAM));
@@ -45,6 +46,7 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
 
         this.createExcavator(ModItems.boneExcavator, Ingredient.of(Tags.Items.BONES));
         this.createExcavator(ModItems.coalExcavator, Ingredient.of(Items.COAL));
+        this.createExcavator(ModItems.copperExcavator, Ingredient.of(Tags.Items.INGOTS_COPPER));
         this.createExcavator(ModItems.emeraldExcavator, Ingredient.of(Tags.Items.GEMS_EMERALD));
         this.createExcavator(ModItems.enderExcavator, Ingredient.of(ModBlocks.cleanEndStone));
         this.createExcavator(ModItems.fieryExcavator, Ingredient.of(Items.MAGMA_CREAM));

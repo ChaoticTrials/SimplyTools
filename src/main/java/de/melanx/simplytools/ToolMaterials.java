@@ -25,6 +25,7 @@ public enum ToolMaterials implements Tier {
 
     BONE("bone", () -> Ingredient.of(Tags.Items.BONES)),
     COAL("coal", () -> Ingredient.of(Items.COAL)),
+    COPPER("copper", () -> Ingredient.of(Tags.Items.INGOTS_COPPER)),
     EMERALD("emerald", () -> Ingredient.of(Tags.Items.GEMS_EMERALD)),
     ENDER("ender", () -> Ingredient.of(Tags.Items.ENDER_PEARLS)),
     FIERY("fiery", () -> Ingredient.of(Items.MAGMA_BLOCK)),

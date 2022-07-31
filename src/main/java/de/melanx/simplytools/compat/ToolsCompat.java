@@ -35,6 +35,7 @@ public class ToolsCompat {
         return switch (tier) {
             case "bone" -> ToolMaterials.BONE;
             case "coal" -> ToolMaterials.COAL;
+            case "copper" -> ToolMaterials.COPPER;
             case "emerald" -> ToolMaterials.EMERALD;
             case "ender" -> ToolMaterials.ENDER;
             case "fiery" -> ToolMaterials.FIERY;
