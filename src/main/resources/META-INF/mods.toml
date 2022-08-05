@@ -18,7 +18,7 @@ Install MoreVanillaLib for special effects ingame
 [[dependencies.simplytools]]
     modId="forge"
     mandatory=true
-    versionRange="[42,)"
+    versionRange="[42.0.8,)"
     ordering="NONE"
     side="BOTH"
 

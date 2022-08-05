@@ -3,10 +3,13 @@ package de.melanx.simplytools.data;
 import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.simplytools.items.BaseTool;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.moddingx.libx.annotation.data.Datagen;
 import org.moddingx.libx.base.decoration.DecoratedBlock;
@@ -18,13 +21,17 @@ import org.moddingx.libx.mod.ModX;
 @Datagen
 public class ToolTags extends CommonTagsProviderBase {
 
+    public static final TagKey<Item> TOOLS_HAMMERS = ItemTags.create(new ResourceLocation("forge", "tools/hammers"));
+    public static final TagKey<Item> TOOLS_EXCAVATORS = ItemTags.create(new ResourceLocation("forge", "tools/excavators"));
+
     public ToolTags(ModX mod, DataGenerator generator, ExistingFileHelper fileHelper) {
         super(mod, generator, fileHelper);
     }
 
     @Override
     public void setup() {
-        // NO-OP
+        //noinspection unchecked
+        this.item(Tags.Items.TOOLS).addTags(TOOLS_HAMMERS, TOOLS_EXCAVATORS);
     }
 
     @Override
@@ -53,6 +60,13 @@ public class ToolTags extends CommonTagsProviderBase {
                 case QUARTZ -> this.item(ModTags.Items.QUARTZ_TOOLS).add(item);
                 case REDSTONE -> this.item(ModTags.Items.REDSTONE_TOOLS).add(item);
                 case SLIME -> this.item(ModTags.Items.SLIME_TOOLS).add(item);
+            }
+            if (tool.blocks == BlockTags.MINEABLE_WITH_PICKAXE) {
+                this.item(TOOLS_HAMMERS).add(item);
+            }
+
+            if (tool.blocks == BlockTags.MINEABLE_WITH_SHOVEL) {
+                this.item(TOOLS_EXCAVATORS).add(item);
             }
         }
     }
