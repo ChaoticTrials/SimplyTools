@@ -1,8 +1,8 @@
 {
   "itemGroup.simplytools": "Simply Tools",
 
-  "enchantment.morevanillalib.power_of_the_depth": "Kraft der Tiefe",
-  "enchantment.morevanillalib.power_of_the_depth.desc": "Erhöht die Abbautiefe für Hämmer und Ausgraber.",
+  "enchantment.simplytools.power_of_the_depth": "Kraft der Tiefe",
+  "enchantment.simplytools.power_of_the_depth.desc": "Erhöht die Abbautiefe für Hämmer und Ausgraber.",
 
   "block.simplytools.clean_end_stone": "Reiner Endstein",
   "block.simplytools.clean_end_stone_button": "Reiner Endsteinknopf",

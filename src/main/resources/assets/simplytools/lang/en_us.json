@@ -1,8 +1,8 @@
 {
   "itemGroup.simplytools": "Simply Tools",
 
-  "enchantment.morevanillalib.power_of_the_depth": "Power of the Depth",
-  "enchantment.morevanillalib.power_of_the_depth.desc": "Increases the mining depth for Hammers and Excavators.",
+  "enchantment.simplytools.power_of_the_depth": "Power of the Depth",
+  "enchantment.simplytools.power_of_the_depth.desc": "Increases the mining depth for Hammers and Excavators.",
 
   "block.simplytools.clean_end_stone": "Clean Endstone",
   "block.simplytools.clean_end_stone_button": "Clean Endstone Button",
