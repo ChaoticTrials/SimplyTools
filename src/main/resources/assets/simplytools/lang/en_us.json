@@ -99,5 +99,7 @@
   "item.simplytools.redstone_excavator": "Redstone Excavator",
   "item.simplytools.redstone_excavator_head": "Redstone Excavator Head",
   "item.simplytools.slime_excavator": "Slime Excavator",
-  "item.simplytools.slime_excavator_head": "Slime Excavator Head"
+  "item.simplytools.slime_excavator_head": "Slime Excavator Head",
+
+  "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
 }

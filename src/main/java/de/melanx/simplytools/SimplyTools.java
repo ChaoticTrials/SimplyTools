@@ -1,5 +1,6 @@
 package de.melanx.simplytools;
 
+import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.util.ClientEventHandler;
 import de.melanx.simplytools.util.VanillaCondition;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,12 +14,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.moddingx.libx.mod.ModXRegistration;
 import org.moddingx.libx.registration.RegistrationBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nonnull;
 
 @Mod("simplytools")
 public final class SimplyTools extends ModXRegistration {
 
+    public static Logger LOGGER = LoggerFactory.getLogger(SimplyTools.class);
     private static SimplyTools instance;
 
     public SimplyTools() {
@@ -37,6 +41,8 @@ public final class SimplyTools extends ModXRegistration {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
         }
+
+        CompatHelper.loadTiers();
     }
 
     @Override

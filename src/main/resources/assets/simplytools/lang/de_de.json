@@ -99,5 +99,7 @@
   "item.simplytools.redstone_excavator": "Redstoneausgraber",
   "item.simplytools.redstone_excavator_head": "Redstoneausgraberkopf",
   "item.simplytools.slime_excavator": "Schleimausgraber",
-  "item.simplytools.slime_excavator_head": "Schleimausgraberkopf"
+  "item.simplytools.slime_excavator_head": "Schleimausgraberkopf",
+
+  "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
 }

@@ -1,6 +1,6 @@
 package de.melanx.simplytools;
 
-import de.melanx.simplytools.compat.ToolsCompat;
+import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.config.ConfigurableMaterial;
 import de.melanx.simplytools.config.ModConfig;
 import net.minecraft.tags.ItemTags;
@@ -44,11 +44,8 @@ public enum ToolMaterials implements Tier {
     private final LazyValue<Ingredient> repairIngredient;
 
     ToolMaterials(String material, Supplier<Ingredient> repairIngredient) {
-        int baseDurability = ToolsCompat.getDurabilityFor(material);
-        if (baseDurability < 0 && ToolsCompat.isMoreVanillaToolsLoaded()) {
-            throw new IllegalStateException("Invalid tier detected");
-        }
-        this.material = ConfigurableMaterial.of(ToolsCompat.getTierFor(material));
+        int baseDurability = CompatHelper.getDurabilityFor(material);
+        this.material = ConfigurableMaterial.of(CompatHelper.getTierFor(material));
         this.durability = (int) (baseDurability * ModConfig.durabilityModifier);
         this.repairIngredient = new LazyValue<>(repairIngredient);
     }

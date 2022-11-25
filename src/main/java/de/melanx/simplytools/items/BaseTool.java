@@ -25,13 +25,11 @@ import java.util.List;
 
 public class BaseTool extends DiggerItem implements Registerable {
 
-    private final ToolMaterials tier;
     private final boolean isVanilla;
     private final Item head;
 
-    public BaseTool(float attackDamageModifier, float attackSpeedModifier, ToolMaterials tier, TagKey<Block> mineable, Properties properties) {
+    public BaseTool(float attackDamageModifier, float attackSpeedModifier, Tier tier, TagKey<Block> mineable, Properties properties) {
         super(attackDamageModifier, attackSpeedModifier, tier, mineable, properties);
-        this.tier = tier;
         this.isVanilla = tier == ToolMaterials.WOODEN
                 || tier == ToolMaterials.STONE
                 || tier == ToolMaterials.IRON
@@ -43,7 +41,7 @@ public class BaseTool extends DiggerItem implements Registerable {
 
     @Override
     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-        return this.tier == ToolMaterials.WOODEN ? 400 : 0;
+        return this.getTier() == ToolMaterials.WOODEN ? 400 : 0;
     }
 
     @Override
@@ -69,12 +67,6 @@ public class BaseTool extends DiggerItem implements Registerable {
         return this.head;
     }
 
-    @Nonnull
-    @Override
-    public ToolMaterials getTier() {
-        return this.tier;
-    }
-
     @Override
     public void initTracking(RegistrationContext ctx, TrackingCollector builder) throws ReflectiveOperationException {
         builder.trackNamed(ForgeRegistries.ITEMS, "head", BaseTool.class.getDeclaredField("head"));
@@ -82,7 +74,7 @@ public class BaseTool extends DiggerItem implements Registerable {
 
     @Override
     public int getEnchantmentLevel(ItemStack stack, Enchantment enchantment) {
-        if (enchantment == Enchantments.KNOCKBACK && stack.getItem() instanceof BaseTool item && item.tier == ToolMaterials.SLIME) {
+        if (enchantment == Enchantments.KNOCKBACK && stack.getItem() instanceof BaseTool item && item.getTier() == ToolMaterials.SLIME) {
             return 3;
         }
 
