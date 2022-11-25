@@ -3,6 +3,7 @@ package de.melanx.simplytools;
 import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.config.ConfigurableMaterial;
 import de.melanx.simplytools.config.ModConfig;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
@@ -37,7 +38,9 @@ public enum ToolMaterials implements Tier {
     PRISMARINE("prismarine", () -> Ingredient.of(Tags.Items.DUSTS_PRISMARINE)),
     QUARTZ("quartz", () -> Ingredient.of(Tags.Items.GEMS_QUARTZ)),
     REDSTONE("redstone", () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
-    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS));
+    SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS)),
+
+    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY);
 
     private final ConfigurableMaterial material;
     private final int durability;

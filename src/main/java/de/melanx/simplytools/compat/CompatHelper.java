@@ -5,6 +5,7 @@ import de.melanx.simplytools.SimplyTools;
 import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.items.DummyItem;
+import io.github.lieonlion.enderite.core.init.ToolMaterialInit;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -39,6 +40,10 @@ public class CompatHelper {
         if (ModList.get().isLoaded(COPPERIZED)) {
             SimplyTools.LOGGER.info(COPPERIZED + " is loaded.");
             LOADED_TIERS.put("copper", CopperizedTiers.COPPER);
+        }
+
+        if (ModList.get().isLoaded(ENDERITE)) {
+            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE);
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {

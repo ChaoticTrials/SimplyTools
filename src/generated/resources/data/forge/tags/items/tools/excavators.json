@@ -20,6 +20,7 @@
     "simplytools:prismarine_excavator",
     "simplytools:quartz_excavator",
     "simplytools:redstone_excavator",
-    "simplytools:slime_excavator"
+    "simplytools:slime_excavator",
+    "simplytools:enderite_excavator"
   ]
 }

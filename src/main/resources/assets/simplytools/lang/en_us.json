@@ -57,6 +57,9 @@
   "item.simplytools.slime_hammer": "Slime Hammer",
   "item.simplytools.slime_hammer_head": "Slime Hammer Head",
 
+  "item.simplytools.enderite_hammer": "Enderite Hammer",
+  "item.simplytools.enderite_hammer_head": "Enderite Hammer Head",
+
   "item.simplytools.wooden_excavator": "Wooden Excavator",
   "item.simplytools.wooden_excavator_head": "Wooden Excavator Head",
   "item.simplytools.stone_excavator": "Stone Excavator",
@@ -100,6 +103,9 @@
   "item.simplytools.redstone_excavator_head": "Redstone Excavator Head",
   "item.simplytools.slime_excavator": "Slime Excavator",
   "item.simplytools.slime_excavator_head": "Slime Excavator Head",
+
+  "item.simplytools.enderite_excavator": "Enderite Excavator",
+  "item.simplytools.enderite_excavator_head": "Enderite Excavator Head",
 
   "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
 }

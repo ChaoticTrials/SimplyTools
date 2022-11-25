@@ -23,7 +23,8 @@ dependencies {
     implementation fg.deobf("de.melanx:MoreVanillaLib:1.19.1-4.1.1")
     implementation fg.deobf("de.melanx:MoreVanillaTools:1.19.1-5.1.1")
 
-    compileOnly fg.deobf("mezz.jei:jei-1.19.1-forge:11.2.0.241")
+    implementation fg.deobf("mezz.jei:jei-1.19.2-forge:11.4.0.286")
 
     implementation curse.mod(567666, 3972600) // Copperized 2.5 - 1.19+
+    implementation curse.mod(550532, 4104273) // LieOnLion's Enderite 1.4.2-1.19.2
 }

@@ -41,6 +41,8 @@ public class ModItems {
     public static final Item redstoneHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.REDSTONE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item slimeHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.SLIME, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
 
+    public static final Item enderiteHammer = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.0f, ToolMaterials.ENDERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
+
     // excavators
     public static final Item woodenExcavator = new BaseTool(2.0f, -3.2f, ToolMaterials.WOODEN, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item stoneExcavator = new BaseTool(3.0f, -3.2f, ToolMaterials.STONE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
@@ -65,6 +67,7 @@ public class ModItems {
     public static final Item redstoneExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.REDSTONE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item slimeExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.SLIME, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
 
+    public static final Item enderiteExcavator = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.2f, ToolMaterials.ENDERITE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     // additions
     public static final Item paperBundle = new ItemBase(SimplyTools.getInstance(), new Item.Properties());
 

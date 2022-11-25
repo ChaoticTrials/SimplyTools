@@ -57,6 +57,9 @@
   "item.simplytools.slime_hammer": "Schleimhammer",
   "item.simplytools.slime_hammer_head": "Schleimhammerkopf",
 
+  "item.simplytools.enderite_hammer": "Enderit Hammer",
+  "item.simplytools.enderite_hammer_head": "Enderit Hammer Head",
+
   "item.simplytools.wooden_excavator": "Holzausgraber",
   "item.simplytools.wooden_excavator_head": "Holzausgraberkopf",
   "item.simplytools.stone_excavator": "Steinausgraber",
@@ -100,6 +103,9 @@
   "item.simplytools.redstone_excavator_head": "Redstoneausgraberkopf",
   "item.simplytools.slime_excavator": "Schleimausgraber",
   "item.simplytools.slime_excavator_head": "Schleimausgraberkopf",
+
+  "item.simplytools.enderite_excavator": "Enderit Excavator",
+  "item.simplytools.enderite_excavator_head": "Enderit Excavator Head",
 
   "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
 }
