@@ -1,4 +1,4 @@
-package de.melanx.simplytools.data;
+package de.melanx.simplytools.data.recipes;
 
 import de.melanx.simplytools.ModBlocks;
 import de.melanx.simplytools.ModItems;
@@ -69,7 +69,7 @@ public class Recipes extends RecipeProviderBase implements CraftingExtension, Co
                 .save(this.consumer(), SimplyTools.getInstance().resource("gold_nugget_from_blasting"));
     }
 
-    private void createHammer(Item result, Ingredient material) {
+    protected void createHammer(Item result, Ingredient material) {
         BaseTool tool = (BaseTool) result;
         this.shaped(tool.getHead(),
                 "mm ",
@@ -84,7 +84,7 @@ public class Recipes extends RecipeProviderBase implements CraftingExtension, Co
                 's', Tags.Items.RODS_WOODEN);
     }
 
-    private void createExcavator(Item result, Ingredient material) {
+    protected void createExcavator(Item result, Ingredient material) {
         BaseTool tool = (BaseTool) result;
         this.shaped(tool.getHead(),
                 "mmm",

@@ -1,22 +1,26 @@
-package de.melanx.simplytools.data;
+package de.melanx.simplytools.data.recipes;
 
 import de.melanx.simplytools.ModBlocks;
 import de.melanx.simplytools.ModItems;
+import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.compat.ToolsCompat;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.VanillaCondition;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.moddingx.libx.annotation.data.Datagen;
 import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
 import org.moddingx.libx.mod.ModX;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 @Datagen
@@ -69,14 +73,19 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
         );
     }
 
+    private ResourceLocation output(@Nonnull Item item) {
+        //noinspection ConstantConditions
+        return this.mod.resource(CompatHelper.MOREVANILLATOOLS + "/" + ForgeRegistries.ITEMS.getKey(item).getPath());
+    }
+
     private void createHammer(Item result, Ingredient material) {
         BaseTool tool = (BaseTool) result;
-        this.shaped(tool.getHead(),
+        this.shaped(this.output(tool.getHead()), tool.getHead(),
                 "mm ",
                 "mmm",
                 " mm",
                 'm', material);
-        this.shaped(result,
+        this.shaped(this.output(result), result,
                 "  h",
                 " s ",
                 "s  ",
@@ -86,12 +95,12 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
 
     private void createExcavator(Item result, Ingredient material) {
         BaseTool tool = (BaseTool) result;
-        this.shaped(tool.getHead(),
+        this.shaped(this.output(tool.getHead()), tool.getHead(),
                 "mmm",
                 "mmm",
                 " m ",
                 'm', material);
-        this.shaped(result,
+        this.shaped(this.output(result), result,
                 "  h",
                 " s ",
                 "s  ",
