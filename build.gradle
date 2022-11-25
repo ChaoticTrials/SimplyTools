@@ -24,4 +24,6 @@ dependencies {
     implementation fg.deobf("de.melanx:MoreVanillaTools:1.19.1-5.1.1")
 
     compileOnly fg.deobf("mezz.jei:jei-1.19.1-forge:11.2.0.241")
+
+    implementation curse.mod(567666, 3972600) // Copperized 2.5 - 1.19+
 }

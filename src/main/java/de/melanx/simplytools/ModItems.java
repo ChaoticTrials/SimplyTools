@@ -27,7 +27,7 @@ public class ModItems {
 
     public static final Item boneHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.BONE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item coalHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.COAL, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
-    public static final Item copperHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.COPPER, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
+    public static final Item copperHammer = ModItems.makeItem(List.of(CompatHelper.COPPERIZED, CompatHelper.MOREVANILLATOOLS), 0, -3.0f, ToolMaterials.COPPER, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item emeraldHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.EMERALD, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item enderHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.ENDER, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item fieryHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.FIERY, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().tab(SimplyTools.getTab()));
@@ -51,7 +51,7 @@ public class ModItems {
 
     public static final Item boneExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.BONE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item coalExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.COAL, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
-    public static final Item copperExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.COPPER, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
+    public static final Item copperExcavator = ModItems.makeItem(List.of(CompatHelper.COPPERIZED, CompatHelper.MOREVANILLATOOLS), 0, -3.2f, ToolMaterials.COPPER, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item emeraldExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.EMERALD, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item enderExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.ENDER, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));
     public static final Item fieryExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.FIERY, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties().tab(SimplyTools.getTab()));

@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.onvoid.copperized.common.CopperizedTiers;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -34,6 +35,11 @@ public class CompatHelper {
                 LOADED_TIERS.putAll(map);
             }
         });
+
+        if (ModList.get().isLoaded(COPPERIZED)) {
+            SimplyTools.LOGGER.info(COPPERIZED + " is loaded.");
+            LOADED_TIERS.put("copper", CopperizedTiers.COPPER);
+        }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {
             SimplyTools.LOGGER.info(MOREVANILLATOOLS + " is loaded.");

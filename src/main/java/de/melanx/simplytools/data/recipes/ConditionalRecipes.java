@@ -3,7 +3,6 @@ package de.melanx.simplytools.data.recipes;
 import de.melanx.simplytools.ModBlocks;
 import de.melanx.simplytools.ModItems;
 import de.melanx.simplytools.compat.CompatHelper;
-import de.melanx.simplytools.compat.ToolsCompat;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.VanillaCondition;
 import net.minecraft.data.DataGenerator;
@@ -68,7 +67,7 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
     @Override
     protected List<ICondition> conditions() {
         return List.of(
-                new ModLoadedCondition(ToolsCompat.MODID),
+                new ModLoadedCondition(CompatHelper.MOREVANILLATOOLS),
                 new VanillaCondition()
         );
     }
