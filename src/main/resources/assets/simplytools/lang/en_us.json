@@ -107,5 +107,5 @@
   "item.simplytools.enderite_excavator": "Enderite Excavator",
   "item.simplytools.enderite_excavator_head": "Enderite Excavator Head",
 
-  "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
+  "tooltip.simplytools.compat.not_loaded_list": "To use this item, at least one of the following mods is missing:"
 }
