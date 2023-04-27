@@ -12,7 +12,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:smithing",
+        "type": "minecraft:smithing_transform",
         "addition": {
           "item": "lolenderite:enderite_ingot"
         },
@@ -21,6 +21,9 @@
         },
         "result": {
           "item": "simplytools:enderite_excavator"
+        },
+        "template": {
+          "item": "minecraft:netherite_upgrade_smithing_template"
         }
       }
     },

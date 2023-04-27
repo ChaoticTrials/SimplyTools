@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "m": {
       "tag": "forge:ingots/gold"
@@ -12,5 +13,6 @@
   ],
   "result": {
     "item": "simplytools:golden_excavator_head"
-  }
+  },
+  "show_notification": true
 }

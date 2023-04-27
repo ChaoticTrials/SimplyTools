@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "h": {
       "item": "simplytools:stone_excavator_head"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "simplytools:stone_excavator"
-  }
+  },
+  "show_notification": true
 }

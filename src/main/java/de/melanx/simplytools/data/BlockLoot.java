@@ -1,15 +1,12 @@
 package de.melanx.simplytools.data;
 
-import net.minecraft.data.DataGenerator;
-import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.loot.BlockLootProviderBase;
-import org.moddingx.libx.mod.ModX;
 
-@Datagen
 public class BlockLoot extends BlockLootProviderBase {
 
-    public BlockLoot(ModX mod, DataGenerator generator) {
-        super(mod, generator);
+    public BlockLoot(DatagenContext context) {
+        super(context);
     }
 
     @Override

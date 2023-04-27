@@ -1,16 +1,12 @@
 package de.melanx.simplytools.data;
 
-import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import org.moddingx.libx.annotation.data.Datagen;
-import org.moddingx.libx.datagen.provider.BlockStateProviderBase;
-import org.moddingx.libx.mod.ModX;
+import org.moddingx.libx.datagen.DatagenContext;
+import org.moddingx.libx.datagen.provider.model.BlockStateProviderBase;
 
-@Datagen
 public class BlockStates extends BlockStateProviderBase {
 
-    public BlockStates(ModX mod, DataGenerator generator, ExistingFileHelper fileHelper) {
-        super(mod, generator, fileHelper);
+    public BlockStates(DatagenContext context) {
+        super(context);
     }
 
     @Override

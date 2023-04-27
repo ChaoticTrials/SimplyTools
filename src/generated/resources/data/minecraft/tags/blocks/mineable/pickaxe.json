@@ -1,5 +1,10 @@
 {
   "values": [
-    "simplytools:clean_end_stone"
+    "simplytools:clean_end_stone",
+    "simplytools:clean_end_stone_button",
+    "simplytools:clean_end_stone_pressure_plate",
+    "simplytools:clean_end_stone_stairs",
+    "simplytools:clean_end_stone_wall",
+    "simplytools:clean_end_stone_slab"
   ]
 }

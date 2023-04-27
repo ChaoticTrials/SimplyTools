@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "m": {
             "item": "simplytools:clean_end_stone"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "simplytools:ender_excavator_head"
-        }
+        },
+        "show_notification": true
       }
     },
     {

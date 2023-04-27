@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "equipment",
   "key": {
     "h": {
       "item": "simplytools:golden_hammer_head"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "simplytools:golden_hammer"
-  }
+  },
+  "show_notification": true
 }

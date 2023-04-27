@@ -4,7 +4,7 @@ import de.melanx.simplytools.ModItems;
 import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.VanillaCondition;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -12,19 +12,17 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
-import org.moddingx.libx.mod.ModX;
 
 import javax.annotation.Nonnull;
 import java.util.List;
 
-@Datagen
 public class CopperizedRecipes extends RecipeProviderBase implements CraftingExtension {
 
-    public CopperizedRecipes(ModX mod, DataGenerator generator) {
-        super(mod, generator);
+    public CopperizedRecipes(DatagenContext context) {
+        super(context);
     }
 
     @Override
@@ -49,12 +47,12 @@ public class CopperizedRecipes extends RecipeProviderBase implements CraftingExt
 
     private void createHammer(Item result, Ingredient material) {
         BaseTool tool = (BaseTool) result;
-        this.shaped(this.output(tool.getHead()), tool.getHead(),
+        this.shaped(this.output(tool.getHead()), RecipeCategory.TOOLS, tool.getHead(),
                 "mm ",
                 "mmm",
                 " mm",
                 'm', material);
-        this.shaped(this.output(result), result,
+        this.shaped(this.output(result), RecipeCategory.TOOLS, result,
                 "  h",
                 " s ",
                 "s  ",
@@ -64,12 +62,12 @@ public class CopperizedRecipes extends RecipeProviderBase implements CraftingExt
 
     private void createExcavator(Item result, Ingredient material) {
         BaseTool tool = (BaseTool) result;
-        this.shaped(this.output(tool.getHead()), tool.getHead(),
+        this.shaped(this.output(tool.getHead()), RecipeCategory.TOOLS, tool.getHead(),
                 "mmm",
                 "mmm",
                 " m ",
                 'm', material);
-        this.shaped(this.output(result), result,
+        this.shaped(this.output(result), RecipeCategory.TOOLS, result,
                 "  h",
                 " s ",
                 "s  ",

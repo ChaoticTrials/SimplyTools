@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "m": {
             "tag": "forge:storage_blocks/quartz"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "simplytools:quartz_excavator_head"
-        }
+        },
+        "show_notification": true
       }
     },
     {

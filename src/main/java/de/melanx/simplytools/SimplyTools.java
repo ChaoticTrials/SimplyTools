@@ -1,23 +1,29 @@
 package de.melanx.simplytools;
 
 import de.melanx.simplytools.compat.CompatHelper;
+import de.melanx.simplytools.data.BlockLoot;
+import de.melanx.simplytools.data.BlockStates;
+import de.melanx.simplytools.data.ItemModels;
+import de.melanx.simplytools.data.ToolTags;
+import de.melanx.simplytools.data.recipes.ConditionalRecipes;
+import de.melanx.simplytools.data.recipes.CopperizedRecipes;
+import de.melanx.simplytools.data.recipes.EnderiteRecipes;
+import de.melanx.simplytools.data.recipes.Recipes;
 import de.melanx.simplytools.util.ClientEventHandler;
 import de.melanx.simplytools.util.VanillaCondition;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
+import org.moddingx.libx.datagen.DatagenSystem;
 import org.moddingx.libx.mod.ModXRegistration;
 import org.moddingx.libx.registration.RegistrationBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nonnull;
 
 @Mod("simplytools")
 public final class SimplyTools extends ModXRegistration {
@@ -26,14 +32,6 @@ public final class SimplyTools extends ModXRegistration {
     private static SimplyTools instance;
 
     public SimplyTools() {
-        super(new CreativeModeTab("simplytools") {
-
-            @Nonnull
-            @Override
-            public ItemStack makeIcon() {
-                return new ItemStack(ModItems.redstoneHammer);
-            }
-        });
         instance = this;
 
         CraftingHelper.register(VanillaCondition.SERIALIZER);
@@ -42,31 +40,38 @@ public final class SimplyTools extends ModXRegistration {
             MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
         }
 
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::createTab);
+
+        DatagenSystem.create(this, system -> {
+            system.addDataProvider(BlockLoot::new);
+            system.addDataProvider(BlockStates::new);
+            system.addDataProvider(ItemModels::new);
+            system.addDataProvider(ToolTags::new);
+            system.addDataProvider(Recipes::new);
+            system.addDataProvider(ConditionalRecipes::new);
+            system.addDataProvider(CopperizedRecipes::new);
+            system.addDataProvider(EnderiteRecipes::new);
+        });
+
         CompatHelper.loadTiers();
     }
 
     @Override
     protected void setup(FMLCommonSetupEvent event) {
-
+        // NO-OP
     }
 
     @Override
     protected void clientSetup(FMLClientSetupEvent event) {
-
+        // NO-OP
     }
 
     @Override
     protected void initRegistration(RegistrationBuilder builder) {
-        builder.enableRegistryTracking();
+        // NO-OP
     }
 
     public static SimplyTools getInstance() {
         return instance;
-    }
-
-    @Nonnull
-    public static CreativeModeTab getTab() {
-        //noinspection ConstantConditions
-        return instance.tab;
     }
 }

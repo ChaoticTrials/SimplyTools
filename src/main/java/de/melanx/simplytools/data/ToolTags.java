@@ -3,7 +3,6 @@ package de.melanx.simplytools.data;
 import de.melanx.morevanillalib.data.ModTags;
 import de.melanx.simplytools.ToolMaterials;
 import de.melanx.simplytools.items.BaseTool;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -12,22 +11,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import org.moddingx.libx.annotation.data.Datagen;
 import org.moddingx.libx.base.decoration.DecoratedBlock;
 import org.moddingx.libx.base.decoration.DecorationContext;
 import org.moddingx.libx.base.decoration.DecorationType;
-import org.moddingx.libx.datagen.provider.CommonTagsProviderBase;
-import org.moddingx.libx.mod.ModX;
+import org.moddingx.libx.datagen.DatagenContext;
+import org.moddingx.libx.datagen.provider.tags.CommonTagsProviderBase;
 
-@Datagen
 public class ToolTags extends CommonTagsProviderBase {
 
     public static final TagKey<Item> TOOLS_HAMMERS = ItemTags.create(new ResourceLocation("forge", "tools/hammers"));
     public static final TagKey<Item> TOOLS_EXCAVATORS = ItemTags.create(new ResourceLocation("forge", "tools/excavators"));
 
-    public ToolTags(ModX mod, DataGenerator generator, ExistingFileHelper fileHelper) {
-        super(mod, generator, fileHelper);
+    public ToolTags(DatagenContext context) {
+        super(context);
     }
 
     @Override

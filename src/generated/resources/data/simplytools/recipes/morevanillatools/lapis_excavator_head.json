@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "m": {
             "tag": "forge:storage_blocks/lapis"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "simplytools:lapis_excavator_head"
-        }
+        },
+        "show_notification": true
       }
     },
     {

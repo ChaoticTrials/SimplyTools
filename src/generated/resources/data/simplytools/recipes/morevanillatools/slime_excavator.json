@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "h": {
             "item": "simplytools:slime_excavator_head"
@@ -28,7 +29,8 @@
         ],
         "result": {
           "item": "simplytools:slime_excavator"
-        }
+        },
+        "show_notification": true
       }
     },
     {

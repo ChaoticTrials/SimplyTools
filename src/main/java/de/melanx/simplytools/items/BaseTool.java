@@ -1,11 +1,8 @@
 package de.melanx.simplytools.items;
 
-import de.melanx.simplytools.SimplyTools;
 import de.melanx.simplytools.ToolMaterials;
 import de.melanx.simplytools.compat.LibCompat;
-import de.melanx.simplytools.config.ModConfig;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
@@ -36,7 +33,7 @@ public class BaseTool extends DiggerItem implements Registerable {
                 || tier == ToolMaterials.GOLDEN
                 || tier == ToolMaterials.DIAMOND
                 || tier == ToolMaterials.NETHERITE;
-        this.head = new Item(new Item.Properties().tab(SimplyTools.getTab()));
+        this.head = new Item(new Item.Properties());
     }
 
     @Override
@@ -50,17 +47,8 @@ public class BaseTool extends DiggerItem implements Registerable {
     }
 
     @Override
-    public void fillItemCategory(@Nonnull CreativeModeTab tab, @Nonnull NonNullList<ItemStack> items) {
-        if (!this.isVanilla && ModConfig.vanillaOnly) {
-            return;
-        }
-
-        super.fillItemCategory(tab, items);
-    }
-
-    @Override
     public void registerAdditional(RegistrationContext ctx, EntryCollector builder) {
-        builder.registerNamed(Registry.ITEM_REGISTRY, "head", this.head);
+        builder.registerNamed(Registries.ITEM, "head", this.head);
     }
 
     public Item getHead() {
@@ -88,5 +76,9 @@ public class BaseTool extends DiggerItem implements Registerable {
         }
 
         super.appendHoverText(stack, level, tooltip, isAdvanced);
+    }
+
+    public boolean isVanilla() {
+        return this.isVanilla;
     }
 }

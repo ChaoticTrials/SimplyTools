@@ -159,7 +159,7 @@ public class ClientEventHandler {
             matrices.pushPose();
             matrices.translate(pos.getX() - x, pos.getY() - y, pos.getZ() - z);
             PoseStack.Pose entry = matrices.last();
-            VertexConsumer blockBuilder = new SheetedDecalTextureGenerator(vertexBuilder, entry.pose(), entry.normal());
+            VertexConsumer blockBuilder = new SheetedDecalTextureGenerator(vertexBuilder, entry.pose(), entry.normal(), 1);
             //noinspection deprecation
             dispatcher.renderBreakingTexture(level.getBlockState(pos), pos, level, matrices, blockBuilder);
             matrices.popPose();

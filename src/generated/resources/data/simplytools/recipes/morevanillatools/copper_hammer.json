@@ -13,6 +13,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "equipment",
         "key": {
           "h": {
             "item": "simplytools:copper_hammer_head"
@@ -28,7 +29,8 @@
         ],
         "result": {
           "item": "simplytools:copper_hammer"
-        }
+        },
+        "show_notification": true
       }
     },
     {
