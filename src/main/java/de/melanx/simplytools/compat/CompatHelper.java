@@ -5,7 +5,6 @@ import de.melanx.simplytools.SimplyTools;
 import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.items.DummyItem;
-import io.github.lieonlion.enderite.Init.ToolMaterialInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -43,7 +42,8 @@ public class CompatHelper {
         }
 
         if (ModList.get().isLoaded(ENDERITE)) {
-            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE);
+            SimplyTools.LOGGER.info(ENDERITE + " is loaded.");
+//            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE); todo enderite
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {

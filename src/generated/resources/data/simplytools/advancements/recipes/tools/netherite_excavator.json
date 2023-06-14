@@ -41,5 +41,6 @@
     "recipes": [
       "simplytools:netherite_excavator"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

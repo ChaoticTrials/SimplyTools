@@ -28,5 +28,6 @@
     "recipes": [
       "simplytools:blasting/clean_end_stone"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

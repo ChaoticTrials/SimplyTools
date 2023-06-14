@@ -41,5 +41,6 @@
     "recipes": [
       "simplytools:stone_excavator"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

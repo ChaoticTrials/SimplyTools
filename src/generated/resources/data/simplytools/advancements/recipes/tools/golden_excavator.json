@@ -41,5 +41,6 @@
     "recipes": [
       "simplytools:golden_excavator"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

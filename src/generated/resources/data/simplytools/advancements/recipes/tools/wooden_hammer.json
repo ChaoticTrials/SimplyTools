@@ -41,5 +41,6 @@
     "recipes": [
       "simplytools:wooden_hammer"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

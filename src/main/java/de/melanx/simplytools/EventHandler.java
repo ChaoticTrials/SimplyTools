@@ -12,13 +12,13 @@ public class EventHandler {
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
         if (event.getPlayer() instanceof ServerPlayer player && player.getMainHandItem().getItem() instanceof BaseTool && BlockBreaker.canMine(player)) {
-            BlockState state = player.level.getBlockState(event.getPos());
+            BlockState state = player.level().getBlockState(event.getPos());
             if (player.isShiftKeyDown() || !player.getMainHandItem().isCorrectToolForDrops(state)) {
                 return;
             }
 
-            float originalDestroySpeed = state.getDestroySpeed(player.level, event.getPos());
-            BlockBreaker.mine(player.level, player, event.getPos(), 1, (breakState, breakLevel, breakPos) -> {
+            float originalDestroySpeed = state.getDestroySpeed(player.level(), event.getPos());
+            BlockBreaker.mine(player.level(), player, event.getPos(), 1, (breakState, breakLevel, breakPos) -> {
                 float destroySpeed = breakState.getDestroySpeed(breakLevel, breakPos);
                 boolean isEffective = player.getMainHandItem().isCorrectToolForDrops(breakState);
                 boolean verifyHardness = destroySpeed < originalDestroySpeed * 5 && destroySpeed > 0;

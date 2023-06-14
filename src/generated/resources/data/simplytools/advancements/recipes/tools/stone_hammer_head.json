@@ -28,5 +28,6 @@
     "recipes": [
       "simplytools:stone_hammer_head"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

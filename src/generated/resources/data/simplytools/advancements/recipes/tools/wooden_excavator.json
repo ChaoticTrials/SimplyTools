@@ -41,5 +41,6 @@
     "recipes": [
       "simplytools:wooden_excavator"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "simplytools:paper_bundle_decompress"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

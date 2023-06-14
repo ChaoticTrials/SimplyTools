@@ -1,19 +1,14 @@
 package de.melanx.simplytools;
 
 import de.melanx.simplytools.compat.CompatHelper;
-import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.items.DummyItem;
-import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.moddingx.libx.annotation.registration.RegisterClass;
 import org.moddingx.libx.base.ItemBase;
 
@@ -88,24 +83,5 @@ public class ModItems {
         }
 
         return new DummyItem(modids);
-    }
-
-    public static void createTab(CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(SimplyTools.getInstance().resource("tab"), builder -> {
-            builder.title(Component.literal("Simply Tools"));
-            builder.icon(() -> new ItemStack(redstoneHammer))
-                    .displayItems((enabledFlags, output) -> {
-                        for (Item item : ForgeRegistries.ITEMS.getValues()) {
-                            //noinspection DataFlowIssue
-                            if (SimplyTools.getInstance().modid.equals(ForgeRegistries.ITEMS.getKey(item).getNamespace())) {
-                                if (item instanceof BaseTool tool && !tool.isVanilla() && ModConfig.vanillaOnly) {
-                                    continue;
-                                }
-
-                                output.accept(new ItemStack(item));
-                            }
-                        }
-                    });
-        });
     }
 }

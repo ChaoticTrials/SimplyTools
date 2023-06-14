@@ -48,7 +48,7 @@ public class BlockBreaker {
 
         Vec3 eyePosition = player.getEyePosition();
         Vec3 rotation = player.getViewVector(1);
-        AttributeInstance attribute = player.getAttribute(ForgeMod.REACH_DISTANCE.get());
+        AttributeInstance attribute = player.getAttribute(ForgeMod.ENTITY_REACH.get());
         //noinspection ConstantConditions
         double reach = attribute.getValue() + 1;
         Vec3 combined = eyePosition.add(rotation.x * reach, rotation.y * reach, rotation.z * reach);

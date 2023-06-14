@@ -41,5 +41,6 @@
     "recipes": [
       "simplytools:diamond_excavator"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
