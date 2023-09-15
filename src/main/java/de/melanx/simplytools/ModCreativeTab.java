@@ -19,7 +19,7 @@ public class ModCreativeTab {
                 for (Item item : ForgeRegistries.ITEMS.getValues()) {
                     //noinspection DataFlowIssue
                     if (SimplyTools.getInstance().modid.equals(ForgeRegistries.ITEMS.getKey(item).getNamespace())) {
-                        if (item instanceof BaseTool tool && !tool.isVanilla() && ModConfig.vanillaOnly) {
+                        if (!(item instanceof BaseTool tool) || (!tool.isVanilla() && ModConfig.vanillaOnly)) {
                             continue;
                         }
 
