@@ -1,5 +1,6 @@
 package de.melanx.simplytools.enchantments;
 
+import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -19,5 +20,10 @@ public class DepthPower extends Enchantment {
     @Override
     public int getMaxLevel() {
         return 3;
+    }
+
+    @Override
+    public boolean isTradeable() {
+        return ModConfig.disableEnchantmentForVillagers;
     }
 }
