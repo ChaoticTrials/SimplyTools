@@ -24,6 +24,6 @@ public class DepthPower extends Enchantment {
 
     @Override
     public boolean isTradeable() {
-        return ModConfig.disableEnchantmentForVillagers;
+        return !ModConfig.disableEnchantmentForVillagers;
     }
 }
