@@ -24,6 +24,7 @@ public class EventHandler {
                 boolean verifyHardness = destroySpeed < originalDestroySpeed * 5 && destroySpeed > 0;
                 return isEffective && verifyHardness;
             });
+            event.setCanceled(true);
         }
     }
 }
