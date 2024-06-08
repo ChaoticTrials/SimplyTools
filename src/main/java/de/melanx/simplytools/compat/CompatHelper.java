@@ -5,6 +5,7 @@ import de.melanx.simplytools.SimplyTools;
 import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.items.DummyItem;
+import io.github.lieonlion.enderite.init.ToolMaterialsInit;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -43,7 +44,8 @@ public class CompatHelper {
 
         if (ModList.get().isLoaded(ENDERITE)) {
             SimplyTools.LOGGER.info(ENDERITE + " is loaded.");
-//            LOADED_TIERS.put("enderite", ToolMaterialInit.ENDERITE); todo enderite
+            LOADED_TIERS.put("enderite", ToolMaterialsInit.ENDERITE);
+            LOADED_TIERS.put("obsidian_infused_enderite", ToolMaterialsInit.OBSIDIAN_INFUSED);
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {
@@ -132,6 +134,7 @@ public class CompatHelper {
 
             @Override
             public int getLevel() {
+                //noinspection deprecation
                 return base.getLevel();
             }
 
@@ -146,9 +149,5 @@ public class CompatHelper {
                 return base.getRepairIngredient();
             }
         };
-    }
-
-    public record LoadedTier(String name, Tier tier) {
-
     }
 }

@@ -57,6 +57,8 @@
 
   "item.simplytools.enderite_hammer": "Enderite Hammer",
   "item.simplytools.enderite_hammer_head": "Enderite Hammer Head",
+  "item.simplytools.obsidian_infused_enderite_hammer": "Obsidian Infused Enderite Hammer",
+  "item.simplytools.obsidian_infused_enderite_hammer_head": "Obsidian Infused Enderite Hammer Head",
 
   "item.simplytools.wooden_excavator": "Wooden Excavator",
   "item.simplytools.wooden_excavator_head": "Wooden Excavator Head",
@@ -104,6 +106,8 @@
 
   "item.simplytools.enderite_excavator": "Enderite Excavator",
   "item.simplytools.enderite_excavator_head": "Enderite Excavator Head",
+  "item.simplytools.obsidian_infused_enderite_excavator": "Obsidian Infused Enderite Excavator",
+  "item.simplytools.obsidian_infused_enderite_excavator_head": "Obsidian Infused Enderite Excavator Head",
 
   "tooltip.simplytools.compat.not_loaded_list": "To use this item, at least one of the following mods is missing:"
 }

@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "lolenderite"
+        },
+        {
+          "type": "simplytools:vanilla_plus"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:smithing_transform",
+        "addition": {
+          "item": "lolenderite:enderite_ingot"
+        },
+        "base": {
+          "item": "simplytools:netherite_hammer_head"
+        },
+        "result": {
+          "item": "simplytools:enderite_hammer_head"
+        },
+        "template": {
+          "item": "lolenderite:enderite_upgrade_smithing_template"
+        }
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "forge:true"
+        }
+      ],
+      "recipe": {
+        "type": "libx:empty"
+      }
+    }
+  ]
+}

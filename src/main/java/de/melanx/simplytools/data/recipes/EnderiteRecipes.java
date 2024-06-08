@@ -1,9 +1,15 @@
 package de.melanx.simplytools.data.recipes;
 
+import de.melanx.simplytools.ModItems;
 import de.melanx.simplytools.compat.CompatHelper;
+import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.VanillaCondition;
+import io.github.lieonlion.enderite.init.ItemsInit;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,13 +29,19 @@ public class EnderiteRecipes extends RecipeProviderBase implements CraftingExten
 
     @Override
     protected void setup() {
-//        this.smithing(RecipeCategory.TOOLS, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.netheriteHammer, Ingredient.of(ItemInit.ENDERITE_INGOT.get()), ModItems.enderiteHammer);
-//        this.smithing(RecipeCategory.TOOLS, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ((BaseTool) ModItems.netheriteHammer).getHead(), Ingredient.of(ItemInit.ENDERITE_INGOT.get()), ((BaseTool) ModItems.enderiteHammer).getHead());
-//        this.shaped(this.output(ModItems.enderiteHammer), RecipeCategory.TOOLS, ModItems.enderiteHammer, "  h", " s ", "s  ", 'h', ((BaseTool) ModItems.enderiteHammer).getHead(), 's', Tags.Items.RODS_WOODEN);
+        Ingredient enderiteIngot = Ingredient.of(ItemsInit.ENDERITE_INGOT.get());
+        Ingredient obsidianInfusedEnderiteIngot = Ingredient.of(ItemsInit.OBSIDIAN_INFUSED_ENDERITE_INGOT.get());
 
-//        this.smithing(RecipeCategory.TOOLS, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.netheriteExcavator, Ingredient.of(ItemInit.ENDERITE_INGOT.get()), ModItems.enderiteExcavator);
-//        this.smithing(RecipeCategory.TOOLS, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ((BaseTool) ModItems.netheriteExcavator).getHead(), Ingredient.of(ItemInit.ENDERITE_INGOT.get()), ((BaseTool) ModItems.enderiteExcavator).getHead());
-//        this.shaped(this.output(ModItems.enderiteExcavator), RecipeCategory.TOOLS, ModItems.enderiteExcavator, "  h", " s ", "s  ", 'h', ((BaseTool) ModItems.enderiteExcavator).getHead(), 's', Tags.Items.RODS_WOODEN);
+        this.createRecipesFor((BaseTool) ModItems.netheriteHammer, (BaseTool) ModItems.enderiteHammer, enderiteIngot);
+        this.createRecipesFor((BaseTool) ModItems.enderiteHammer, (BaseTool) ModItems.obsidianInfusedEnderiteHammer, obsidianInfusedEnderiteIngot);
+        this.createRecipesFor((BaseTool) ModItems.netheriteExcavator, (BaseTool) ModItems.enderiteExcavator, enderiteIngot);
+        this.createRecipesFor((BaseTool) ModItems.enderiteExcavator, (BaseTool) ModItems.obsidianInfusedEnderiteExcavator, obsidianInfusedEnderiteIngot);
+    }
+
+    public void createRecipesFor(BaseTool base, BaseTool output, Ingredient ingredient) {
+        this.smithing(RecipeCategory.TOOLS, ItemsInit.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), base, ingredient, output);
+        this.smithing(RecipeCategory.TOOLS, ItemsInit.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), base.getHead(), ingredient, output.getHead());
+        this.shaped(this.output(output), RecipeCategory.TOOLS, output, "  h", " s ", "s  ", 'h', output.getHead(), 's', Tags.Items.RODS_WOODEN);
     }
 
     @Override

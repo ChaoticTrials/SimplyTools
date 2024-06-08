@@ -55,8 +55,10 @@
   "item.simplytools.slime_hammer": "Schleimhammer",
   "item.simplytools.slime_hammer_head": "Schleimhammerkopf",
 
-  "item.simplytools.enderite_hammer": "Enderit Hammer",
-  "item.simplytools.enderite_hammer_head": "Enderit Hammer Head",
+  "item.simplytools.enderite_hammer": "Enderithammer",
+  "item.simplytools.enderite_hammer_head": "Enderithammerkopf",
+  "item.simplytools.obsidian_infused_enderite_hammer": "Mit Obsidian angereicherter Enderithammer",
+  "item.simplytools.obsidian_infused_enderite_hammer_head": "Mit Obsidian angereicherter Enderithammerkopf",
 
   "item.simplytools.wooden_excavator": "Holzausgraber",
   "item.simplytools.wooden_excavator_head": "Holzausgraberkopf",
@@ -102,8 +104,10 @@
   "item.simplytools.slime_excavator": "Schleimausgraber",
   "item.simplytools.slime_excavator_head": "Schleimausgraberkopf",
 
-  "item.simplytools.enderite_excavator": "Enderit Excavator",
-  "item.simplytools.enderite_excavator_head": "Enderit Excavator Head",
+  "item.simplytools.enderite_excavator": "Enderitausgraber",
+  "item.simplytools.enderite_excavator_head": "Enderitausgraberkopf",
+  "item.simplytools.obsidian_infused_enderite_excavator": "Mit Obsidian angereicherter Enderitausgraber",
+  "item.simplytools.obsidian_infused_enderite_excavator_head": "Mit Obsidian angereicherter Enderitausgraberkopf",
 
   "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
 }

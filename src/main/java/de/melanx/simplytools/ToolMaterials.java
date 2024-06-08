@@ -40,7 +40,8 @@ public enum ToolMaterials implements Tier {
     REDSTONE("redstone", () -> Ingredient.of(Tags.Items.DUSTS_REDSTONE)),
     SLIME("slime", () -> Ingredient.of(Tags.Items.SLIMEBALLS)),
 
-    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY);
+    ENDERITE("enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "enderite_ingot")) : Ingredient.EMPTY),
+    OBSIDIAN_INFUSED_ENDERITE("obsidian_infused_enderite", () -> CompatHelper.isLoaded(CompatHelper.ENDERITE) ? CompatHelper.getIngredientByIds(new ResourceLocation(CompatHelper.ENDERITE, "obsidian_infused_enderite_ingot")) : Ingredient.EMPTY);
 
     private final ConfigurableMaterial material;
     private final int durability;
