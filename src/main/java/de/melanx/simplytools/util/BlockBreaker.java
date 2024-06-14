@@ -26,7 +26,7 @@ public class BlockBreaker {
         List<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, radius, EnchantmentHelper.getEnchantmentLevel(ModEnchantments.powerOfTheDepth, player), originPos);
         for (BlockPos pos : breakBlocks) {
             boolean canBreak = breakValidator.canBreak(level.getBlockState(pos), level, pos);
-            if (canBreak && tool.isDamageableItem() && tool.getMaxDamage() - tool.getDamageValue() <= 1 && !player.isCreative()) {
+            if (canBreak && tool.isDamageableItem() && tool.getMaxDamage() - tool.getDamageValue() <= 0 && !player.isCreative()) {
                 break;
             } else if (!canBreak) {
                 continue;
