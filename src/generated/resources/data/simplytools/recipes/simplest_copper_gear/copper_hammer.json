@@ -5,7 +5,7 @@
       "conditions": [
         {
           "type": "forge:mod_loaded",
-          "modid": "copperized"
+          "modid": "simplest_copper_gear"
         },
         {
           "type": "simplytools:vanilla_plus"
@@ -15,17 +15,20 @@
         "type": "minecraft:crafting_shaped",
         "category": "equipment",
         "key": {
-          "m": {
-            "tag": "forge:ingots/copper"
+          "h": {
+            "item": "simplytools:copper_hammer_head"
+          },
+          "s": {
+            "tag": "forge:rods/wooden"
           }
         },
         "pattern": [
-          "mm ",
-          "mmm",
-          " mm"
+          "  h",
+          " s ",
+          "s  "
         ],
         "result": {
-          "item": "simplytools:copper_hammer_head"
+          "item": "simplytools:copper_hammer"
         },
         "show_notification": true
       }

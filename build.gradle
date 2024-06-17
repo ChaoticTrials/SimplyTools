@@ -32,8 +32,8 @@ dependencies {
 
     implementation fg.deobf("mezz.jei:jei-1.20.1-forge:15.0.0.12")
 
-    compileOnly curse.mod(567666, 3972600) // Copperized 2.5 - 1.19+
-    compileOnly curse.mod(550532, 4768456) // LieOnLion's Enderite 2.0.0 + 1.20.1
+    implementation curse.mod(984803, 5415723) // Simplest Copper Gear v1.0.5
+    implementation curse.mod(550532, 4768456) // LieOnLion's Enderite 2.0.0 + 1.20.1
 }
 
 

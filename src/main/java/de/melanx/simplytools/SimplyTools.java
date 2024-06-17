@@ -6,9 +6,9 @@ import de.melanx.simplytools.data.BlockStates;
 import de.melanx.simplytools.data.ItemModels;
 import de.melanx.simplytools.data.ToolTags;
 import de.melanx.simplytools.data.recipes.ConditionalRecipes;
-import de.melanx.simplytools.data.recipes.CopperizedRecipes;
 import de.melanx.simplytools.data.recipes.EnderiteRecipes;
 import de.melanx.simplytools.data.recipes.Recipes;
+import de.melanx.simplytools.data.recipes.SimplestCopperGearRecipes;
 import de.melanx.simplytools.util.ClientEventHandler;
 import de.melanx.simplytools.util.VanillaCondition;
 import net.minecraftforge.api.distmarker.Dist;
@@ -46,7 +46,7 @@ public final class SimplyTools extends ModXRegistration {
             system.addDataProvider(ToolTags::new);
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
-            system.addDataProvider(CopperizedRecipes::new);
+            system.addDataProvider(SimplestCopperGearRecipes::new);
             system.addDataProvider(EnderiteRecipes::new);
         });
 

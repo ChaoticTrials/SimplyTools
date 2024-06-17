@@ -6,6 +6,7 @@ import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.items.DummyItem;
 import io.github.lieonlion.enderite.init.ToolMaterialsInit;
+import net.indevo.simplest_copper_gear.item.ModToolTiers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -16,16 +17,15 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.onvoid.copperized.common.CopperizedTiers;
 
 import javax.annotation.Nonnull;
 import java.util.*;
 
 public class CompatHelper {
 
-    public static String COPPERIZED = "copperized";
     public static String ENDERITE = "lolenderite";
     public static String MOREVANILLATOOLS = "morevanillatools";
+    public static String SIMPLEST_COPPER_GEAR = "simplest_copper_gear";
     private static final Map<String, Tier> LOADED_TIERS = new HashMap<>();
 
     public static void loadTiers() {
@@ -37,9 +37,9 @@ public class CompatHelper {
             }
         });
 
-        if (ModList.get().isLoaded(COPPERIZED)) {
-            SimplyTools.LOGGER.info(COPPERIZED + " is loaded.");
-            LOADED_TIERS.put("copper", CopperizedTiers.COPPER);
+        if (ModList.get().isLoaded(SIMPLEST_COPPER_GEAR)) {
+            SimplyTools.LOGGER.info(SIMPLEST_COPPER_GEAR + " is loaded.");
+            LOADED_TIERS.put("copper", ModToolTiers.COPPER);
         }
 
         if (ModList.get().isLoaded(ENDERITE)) {

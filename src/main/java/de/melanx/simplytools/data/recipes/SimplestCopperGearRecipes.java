@@ -19,9 +19,9 @@ import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class CopperizedRecipes extends RecipeProviderBase implements CraftingExtension {
+public class SimplestCopperGearRecipes extends RecipeProviderBase implements CraftingExtension {
 
-    public CopperizedRecipes(DatagenContext context) {
+    public SimplestCopperGearRecipes(DatagenContext context) {
         super(context);
     }
 
@@ -35,14 +35,14 @@ public class CopperizedRecipes extends RecipeProviderBase implements CraftingExt
     @Override
     protected List<ICondition> conditions() {
         return List.of(
-                new ModLoadedCondition(CompatHelper.COPPERIZED),
+                new ModLoadedCondition(CompatHelper.SIMPLEST_COPPER_GEAR),
                 new VanillaCondition()
         );
     }
 
     private ResourceLocation output(@Nonnull Item item) {
         //noinspection ConstantConditions
-        return this.mod.resource(CompatHelper.COPPERIZED + "/" + ForgeRegistries.ITEMS.getKey(item).getPath());
+        return this.mod.resource(CompatHelper.SIMPLEST_COPPER_GEAR + "/" + ForgeRegistries.ITEMS.getKey(item).getPath());
     }
 
     private void createHammer(Item result, Ingredient material) {
