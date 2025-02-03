@@ -8,7 +8,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 import org.moddingx.libx.annotation.registration.RegisterClass;
 import org.moddingx.libx.base.ItemBase;
 
@@ -41,8 +41,8 @@ public class ModItems {
     public static final Item redstoneHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.REDSTONE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties());
     public static final Item slimeHammer = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.0f, ToolMaterials.SLIME, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties());
 
-    public static final Item enderiteHammer = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.0f, ToolMaterials.ENDERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties());
-    public static final Item obsidianInfusedEnderiteHammer = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.0f, ToolMaterials.OBSIDIAN_INFUSED_ENDERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties());
+//    public static final Item enderiteHammer = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.0f, ToolMaterials.ENDERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties());
+//    public static final Item obsidianInfusedEnderiteHammer = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.0f, ToolMaterials.OBSIDIAN_INFUSED_ENDERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties());
 
     // excavators
     public static final Item woodenExcavator = new BaseTool(2.0f, -3.2f, ToolMaterials.WOODEN, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
@@ -68,8 +68,8 @@ public class ModItems {
     public static final Item redstoneExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.REDSTONE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
     public static final Item slimeExcavator = ModItems.makeItem(CompatHelper.MOREVANILLATOOLS, 0, -3.2f, ToolMaterials.SLIME, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
 
-    public static final Item enderiteExcavator = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.2f, ToolMaterials.ENDERITE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
-    public static final Item obsidianInfusedEnderiteExcavator = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.2f, ToolMaterials.OBSIDIAN_INFUSED_ENDERITE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
+//    public static final Item enderiteExcavator = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.2f, ToolMaterials.ENDERITE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
+//    public static final Item obsidianInfusedEnderiteExcavator = ModItems.makeItem(CompatHelper.ENDERITE, 0, -3.2f, ToolMaterials.OBSIDIAN_INFUSED_ENDERITE, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties());
     // additions
     public static final Item paperBundle = new ItemBase(SimplyTools.getInstance(), new Item.Properties());
 

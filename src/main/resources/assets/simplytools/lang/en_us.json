@@ -109,5 +109,7 @@
   "item.simplytools.obsidian_infused_enderite_excavator": "Obsidian Infused Enderite Excavator",
   "item.simplytools.obsidian_infused_enderite_excavator_head": "Obsidian Infused Enderite Excavator Head",
 
-  "tooltip.simplytools.compat.not_loaded_list": "To use this item, at least one of the following mods is missing:"
+  "tooltip.simplytools.compat.not_loaded_list": "To use this item, at least one of the following mods is missing:",
+
+  "tag.item.simplytools.tools.ranged": "Ranged Tools"
 }

@@ -1,6 +1,7 @@
 package de.melanx.simplytools.data;
 
 import de.melanx.morevanillalib.data.ModTags;
+import de.melanx.simplytools.SimplyTools;
 import de.melanx.simplytools.ToolMaterials;
 import de.melanx.simplytools.items.BaseTool;
 import net.minecraft.resources.ResourceLocation;
@@ -10,7 +11,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 import org.moddingx.libx.base.decoration.DecoratedBlock;
 import org.moddingx.libx.base.decoration.DecorationContext;
 import org.moddingx.libx.base.decoration.DecorationType;
@@ -19,8 +20,10 @@ import org.moddingx.libx.datagen.provider.tags.CommonTagsProviderBase;
 
 public class ToolTags extends CommonTagsProviderBase {
 
-    public static final TagKey<Item> TOOLS_HAMMERS = ItemTags.create(new ResourceLocation("forge", "tools/hammers"));
-    public static final TagKey<Item> TOOLS_EXCAVATORS = ItemTags.create(new ResourceLocation("forge", "tools/excavators"));
+    public static final TagKey<Item> TOOLS_HAMMERS = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "tools/hammers"));
+    public static final TagKey<Item> TOOLS_EXCAVATORS = ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "tools/excavators"));
+    public static final TagKey<Item> TOOLS_RANGED = ItemTags.create(SimplyTools.getInstance().resource("tools/ranged"));
+    public static final TagKey<Block> INCORRECT_FOR_HIGHER_TOOL = BlockTags.create(ResourceLocation.fromNamespaceAndPath("morevanillatools", "incorrect_for_higher_tool"));
 
     public ToolTags(DatagenContext context) {
         super(context);
@@ -28,8 +31,12 @@ public class ToolTags extends CommonTagsProviderBase {
 
     @Override
     public void setup() {
-        //noinspection unchecked
-        this.item(Tags.Items.TOOLS).addTags(TOOLS_HAMMERS, TOOLS_EXCAVATORS);
+        this.item(TOOLS_RANGED).addTag(TOOLS_HAMMERS).addTag(TOOLS_EXCAVATORS);
+        this.item(Tags.Items.TOOLS).addTag(TOOLS_RANGED);
+        this.item(Tags.Items.MINING_TOOL_TOOLS).addTag(TOOLS_RANGED);
+        this.item(Tags.Items.MELEE_WEAPON_TOOLS).addTag(TOOLS_HAMMERS);
+
+        this.block(INCORRECT_FOR_HIGHER_TOOL);
     }
 
     @Override
@@ -62,11 +69,11 @@ public class ToolTags extends CommonTagsProviderBase {
                     case SLIME -> this.item(ModTags.Items.SLIME_TOOLS).add(item);
                 }
             }
-            if (tool.blocks == BlockTags.MINEABLE_WITH_PICKAXE) {
+            if (tool.getMineable() == BlockTags.MINEABLE_WITH_PICKAXE) {
                 this.item(TOOLS_HAMMERS).add(item);
             }
 
-            if (tool.blocks == BlockTags.MINEABLE_WITH_SHOVEL) {
+            if (tool.getMineable() == BlockTags.MINEABLE_WITH_SHOVEL) {
                 this.item(TOOLS_EXCAVATORS).add(item);
             }
         }

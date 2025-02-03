@@ -4,14 +4,14 @@ import de.melanx.simplytools.ModItems;
 import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.VanillaCondition;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
@@ -42,7 +42,7 @@ public class SimplestCopperGearRecipes extends RecipeProviderBase implements Cra
 
     private ResourceLocation output(@Nonnull Item item) {
         //noinspection ConstantConditions
-        return this.mod.resource(CompatHelper.SIMPLEST_COPPER_GEAR + "/" + ForgeRegistries.ITEMS.getKey(item).getPath());
+        return this.mod.resource(CompatHelper.SIMPLEST_COPPER_GEAR + "/" + BuiltInRegistries.ITEM.getKey(item).getPath());
     }
 
     private void createHammer(Item result, Ingredient material) {

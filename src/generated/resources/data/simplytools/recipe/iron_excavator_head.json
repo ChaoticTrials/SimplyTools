@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "pattern": [
+    "mmm",
+    "mmm",
+    " m "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:iron_excavator_head"
+  }
+}

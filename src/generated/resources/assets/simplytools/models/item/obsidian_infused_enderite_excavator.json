@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "simplytools:item/obsidian_infused_enderite_excavator"
-  }
-}

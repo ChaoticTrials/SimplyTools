@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "simplytools:iron_hammer"
+    },
+    {
+      "item": "simplytools:iron_excavator"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_nugget"
+  }
+}

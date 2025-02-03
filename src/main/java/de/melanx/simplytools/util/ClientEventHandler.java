@@ -3,7 +3,7 @@ package de.melanx.simplytools.util;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.SheetedDecalTextureGenerator;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import de.melanx.simplytools.ModEnchantments;
+import de.melanx.simplytools.data.EnchantmentProvider;
 import de.melanx.simplytools.items.BaseTool;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.client.Camera;
@@ -18,7 +18,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.BlockDestructionProgress;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
@@ -26,9 +25,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.event.RenderHighlightEvent;
-import net.minecraftforge.client.event.RenderLevelStageEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.RenderHighlightEvent;
+import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 
 import java.util.Iterator;
 
@@ -46,7 +45,7 @@ public class ClientEventHandler {
         }
 
         ItemStack tool = player.getMainHandItem();
-        if (tool.isEmpty() || !(tool.getItem() instanceof BaseTool)) {
+        if (tool.isEmpty() || !(tool.getItem() instanceof BaseTool baseTool)) {
             return;
         }
 
@@ -59,11 +58,11 @@ public class ClientEventHandler {
         BlockHitResult blockTrace = event.getTarget();
         BlockPos origin = blockTrace.getBlockPos();
         BlockState state = level.getBlockState(origin);
-        if (!state.is(((DiggerItem) tool.getItem()).blocks)) {
+        if (!state.is(baseTool.getMineable())) {
             return;
         }
 
-        Iterator<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, player.isShiftKeyDown() ? 0 : 1, EnchantmentHelper.getEnchantmentLevel(ModEnchantments.powerOfTheDepth, player), origin).iterator();
+        Iterator<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, player.isShiftKeyDown() ? 0 : 1, EnchantmentHelper.getEnchantmentLevel(level.registryAccess().holderOrThrow(EnchantmentProvider.POWER_OF_THE_DEPTH), player), origin).iterator();
         if (!breakBlocks.hasNext()) {
             return;
         }
@@ -107,7 +106,7 @@ public class ClientEventHandler {
         }
 
         ItemStack tool = player.getMainHandItem();
-        if (tool.isEmpty() || !(tool.getItem() instanceof BaseTool)) {
+        if (tool.isEmpty() || !(tool.getItem() instanceof BaseTool baseTool)) {
             return;
         }
 
@@ -133,11 +132,11 @@ public class ClientEventHandler {
 
         // determine extra blocks to highlight
         BlockState state = level.getBlockState(origin);
-        if (!state.is(((DiggerItem) tool.getItem()).blocks)) {
+        if (!state.is(baseTool.getMineable())) {
             return;
         }
 
-        Iterator<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, player.isShiftKeyDown() ? 0 : 1, EnchantmentHelper.getEnchantmentLevel(ModEnchantments.powerOfTheDepth, player), origin).iterator();
+        Iterator<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, player.isShiftKeyDown() ? 0 : 1, EnchantmentHelper.getEnchantmentLevel(level.registryAccess().holderOrThrow(EnchantmentProvider.POWER_OF_THE_DEPTH), player), origin).iterator();
         if (!breakBlocks.hasNext()) {
             return;
         }
@@ -159,7 +158,7 @@ public class ClientEventHandler {
             matrices.pushPose();
             matrices.translate(pos.getX() - x, pos.getY() - y, pos.getZ() - z);
             PoseStack.Pose entry = matrices.last();
-            VertexConsumer blockBuilder = new SheetedDecalTextureGenerator(vertexBuilder, entry.pose(), entry.normal(), 1);
+            VertexConsumer blockBuilder = new SheetedDecalTextureGenerator(vertexBuilder, entry, 1);
             //noinspection deprecation
             dispatcher.renderBreakingTexture(level.getBlockState(pos), pos, level, matrices, blockBuilder);
             matrices.popPose();

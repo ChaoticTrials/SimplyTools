@@ -20,7 +20,7 @@ public class ItemModels extends ItemModelProviderBase {
     @Override
     protected void defaultItem(ResourceLocation id, Item item) {
         if (item instanceof BaseTool) {
-            this.withExistingParent(id.getPath(), HANDHELD).texture("layer0", new ResourceLocation(id.getNamespace(), "item/" + id.getPath()));
+            this.withExistingParent(id.getPath(), HANDHELD).texture("layer0", ResourceLocation.fromNamespaceAndPath(id.getNamespace(), "item/" + id.getPath()));
         } else {
             super.defaultItem(id, item);
         }

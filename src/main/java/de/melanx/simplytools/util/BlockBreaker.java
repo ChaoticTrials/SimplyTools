@@ -1,9 +1,11 @@
 package de.melanx.simplytools.util;
 
-import de.melanx.simplytools.ModEnchantments;
+import de.melanx.simplytools.data.EnchantmentProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -23,7 +25,7 @@ public class BlockBreaker {
     public static void mine(Level level, ServerPlayer player, BlockPos originPos, int radius, BreakValidator breakValidator) {
         CURRENTLY_MINING.add(player.getGameProfile().getId());
         ItemStack tool = player.getMainHandItem();
-        List<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, radius, EnchantmentHelper.getEnchantmentLevel(ModEnchantments.powerOfTheDepth, player), originPos);
+        List<BlockPos> breakBlocks = BlockBreaker.getBreakBlocks(level, player, radius, EnchantmentHelper.getEnchantmentLevel(level.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(EnchantmentProvider.POWER_OF_THE_DEPTH), player), originPos);
         for (BlockPos pos : breakBlocks) {
             boolean canBreak = breakValidator.canBreak(level.getBlockState(pos), level, pos);
             if (canBreak && tool.isDamageableItem() && tool.getMaxDamage() - tool.getDamageValue() <= 0 && !player.isCreative()) {
@@ -47,7 +49,8 @@ public class BlockBreaker {
         Vec3 eyePosition = player.getEyePosition();
         Vec3 rotation = player.getViewVector(1);
         //noinspection ConstantConditions
-        double reach = Math.max(player.getEntityReach(), player.getBlockReach());
+
+        double reach = Math.max(player.getAttributeValue(Attributes.ENTITY_INTERACTION_RANGE), player.getAttributeValue(Attributes.BLOCK_INTERACTION_RANGE));
         Vec3 combined = eyePosition.add(rotation.x * reach, rotation.y * reach, rotation.z * reach);
 
         BlockHitResult rayTraceResult = level.clip(new ClipContext(eyePosition, combined, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, player));

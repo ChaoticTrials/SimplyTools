@@ -1,11 +1,12 @@
 package de.melanx.simplytools.config;
 
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.level.block.Block;
 
-public record ConfigurableMaterial(float speed, float attackDamageBonus, int harvestLevel, int enchantmentValue) {
+public record ConfigurableMaterial(float speed, float attackDamageBonus, TagKey<Block> incorrectBlockForDrops, int enchantmentValue) {
 
     public static ConfigurableMaterial of(Tier tier) {
-        //noinspection deprecation
-        return new ConfigurableMaterial(tier.getSpeed(), tier.getAttackDamageBonus(), tier.getLevel(), tier.getEnchantmentValue());
+        return new ConfigurableMaterial(tier.getSpeed(), tier.getAttackDamageBonus(), tier.getIncorrectBlocksForDrops(), tier.getEnchantmentValue());
     }
 }

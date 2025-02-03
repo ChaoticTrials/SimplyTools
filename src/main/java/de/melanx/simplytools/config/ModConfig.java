@@ -16,9 +16,6 @@ public class ModConfig {
     @FloatRange(min = 0, max = 10)
     public static float durabilityModifier = 1.5f;
 
-    @Config("If true, new villagers will not have this in their trades")
-    public static boolean disableEnchantmentForVillagers = false;
-
     @Group
     public static class ToolValues {
 

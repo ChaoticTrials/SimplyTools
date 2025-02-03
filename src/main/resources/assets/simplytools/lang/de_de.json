@@ -109,5 +109,7 @@
   "item.simplytools.obsidian_infused_enderite_excavator": "Mit Obsidian angereicherter Enderitausgraber",
   "item.simplytools.obsidian_infused_enderite_excavator_head": "Mit Obsidian angereicherter Enderitausgraberkopf",
 
-  "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:"
+  "tooltip.simplytools.compat.not_loaded_list": "Eine der folgenden Mods fehlt, um dieses Item zu nutzen:",
+
+  "tag.item.simplytools.tools.ranged": "Fernwerkzeuge"
 }

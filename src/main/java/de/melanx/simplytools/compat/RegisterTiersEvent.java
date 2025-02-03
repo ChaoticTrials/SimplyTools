@@ -1,7 +1,7 @@
 package de.melanx.simplytools.compat;
 
 import net.minecraft.world.item.Tier;
-import net.minecraftforge.eventbus.api.Event;
+import net.neoforged.bus.api.Event;
 
 import java.util.HashMap;
 import java.util.Map;

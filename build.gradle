@@ -1,95 +1,94 @@
-import org.w3c.dom.Document
-import org.w3c.dom.NodeList
-
-import javax.xml.parsers.DocumentBuilderFactory
-
-buildscript {
-    apply from: 'https://moddingx.github.io/ModUtils/v5/buildscript.gradle', to: buildscript
+plugins {
+    id 'org.moddingx.modgradle.meta' version '5.0.2'
 }
-
-apply from: 'https://moddingx.github.io/ModUtils/v5/mod.gradle'
-apply plugin: 'org.moddingx.modgradle.cursedep'
-apply plugin: 'maven-publish'
-mod['version'] = getVersion(mod.minecraft + "-" + mod.base_version, new URL(mod.remote_maven + "/" + group.replace('.', '/') + "/" + name + "/maven-metadata.xml"))
-project.version = mod.version
 
 repositories {
     maven {
-        name = "JEI"
-        url = "https://maven.blamejared.com/"
+        url = "https://modmaven.dev/"
     }
     maven {
-        url = "https://maven.melanx.de"
+        url "file:///home/melanx/Coding/test_maven/"
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
+var baseVersion = '21.1'
+var libxVersion = '1.21.1-6.0.1'
+var jeiVersion = '19.21.0.247'
+var morevanillalibVersion = '21.1.3'
+var morevanillatoolsVersion = '21.1.1'
+
+mod.configure {
+    modid 'simplytools'
+    group 'de.melanx'
+    versioning {
+        base baseVersion
+        maven 'https://maven.melanx.de/release'
+    }
+
+    neoforge "${baseVersion}.115"
+
+    license 'The Apache License, Version 2.0'
+    github 'ChaoticTrials/SimplyTools'
+
+    artifacts {
+        sources {
+            publishToRepositories()
+        }
+    }
+
+    changelog {
+        def lines = defaultChangelog.toString().split('\n')
+        def filteredChangelog = lines.findAll { !it.startsWith('- [meta]') }.join('\n')
+
+        return filteredChangelog
+    }
+
+
+    publishing {
+        maven {
+            name 'melanx'
+            url 'https://maven.melanx.de/release'
+            credentials(PasswordCredentials)
+        }
+    }
+
+    upload {
+        all {
+            type 'release'
+            require 'libx'
+            optional 'morevanillalib'
+            optional 'morevanillatools'
+            optional 'jei'
+            optional 'simplest-copper-gear'
+        }
+        curseforge {
+            projectId 610058
+        }
+        modrinth {
+            projectId 'v7uAVl86'
+        }
     }
 }
 
 dependencies {
-    annotationProcessor fg.deobf("org.moddingx:LibX:1.20.1-5.0.1")
+    annotationProcessor "org.moddingx:LibX:${libxVersion}"
 
-    implementation fg.deobf("org.moddingx:LibX:1.20.1-5.0.1")
-    implementation fg.deobf("de.melanx:MoreVanillaLib:1.20.1-5.0.1")
-    implementation fg.deobf("de.melanx:MoreVanillaTools:1.20.1-6.0.0")
+    implementation "org.moddingx:LibX:${libxVersion}"
+    implementation "mezz.jei:jei-1.${baseVersion}-neoforge:${jeiVersion}"
 
-    implementation fg.deobf("mezz.jei:jei-1.20.1-forge:15.0.0.12")
+    implementation "de.melanx:MoreVanillaLib:${morevanillalibVersion}"
+    implementation "de.melanx:MoreVanillaTools:${morevanillatoolsVersion}"
 
-    implementation curse.mod(984803, 5415723) // Simplest Copper Gear v1.0.5
-    implementation curse.mod(550532, 4768456) // LieOnLion's Enderite 2.0.0 + 1.20.1
-}
-
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = project.group
-            artifactId = project.name
-            version = project.version
-            artifact(jar) {
-                builtBy project.provider { project.tasks.named('reobfJar') }
-            }
-            if (mod.sources) {
-                artifact(sourceJar)
-            }
-            pom {
-                licenses {
-                    license {
-                        name = mod.license
-                        url = mod.license_url.toString()
-                    }
-                }
-            }
-        }
-    }
-    repositories {
-        maven {
-            url mod.remote_maven
-            credentials(PasswordCredentials)
-        }
-    }
-}
-publish.dependsOn('reobfJar')
-
-private static String getVersion(String baseVersion, URL url) {
-    try {
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-
-        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(connection.getInputStream());
-        NodeList versionNodes = doc.getElementsByTagName("version");
-
-        String latestVersion = null;
-        for (int i = 0; i < versionNodes.getLength(); i++) {
-            String version = versionNodes.item(i).getTextContent();
-            if (version.startsWith(baseVersion)) {
-                latestVersion = version;
-            }
-        }
-
-        if (latestVersion == null) {
-            return baseVersion + ".0";
-        }
-
-        return baseVersion + "." + (Integer.parseInt(latestVersion.substring(latestVersion.lastIndexOf('.') + 1)) + 1);
-    } catch (Exception e) {
-        throw new RuntimeException(e);
-    }
+    implementation "curse.maven:simplest-copper-gear-984803:6110163" // Simplest Copper Gear v1.0.6
+//    implementation curse.mod(550532, 4768456) // LieOnLion's Enderite 2.0.0 + 1.20.1
 }

@@ -10,7 +10,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.Tags;
 import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.recipe.*;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CompressionExtension;
@@ -28,7 +28,7 @@ public class Recipes extends RecipeProviderBase implements CraftingExtension, Co
         this.blasting(Tags.Items.END_STONES, ModBlocks.cleanEndStone, 0.1f, 200);
 
         this.createHammer(ModItems.woodenHammer, Ingredient.of(ItemTags.PLANKS));
-        this.createHammer(ModItems.stoneHammer, Ingredient.of(Tags.Items.COBBLESTONE));
+        this.createHammer(ModItems.stoneHammer, Ingredient.of(Tags.Items.COBBLESTONES));
         this.createHammer(ModItems.ironHammer, Ingredient.of(Tags.Items.INGOTS_IRON));
         this.createHammer(ModItems.goldenHammer, Ingredient.of(Tags.Items.INGOTS_GOLD));
         this.createHammer(ModItems.diamondHammer, Ingredient.of(Tags.Items.GEMS_DIAMOND));
@@ -37,7 +37,7 @@ public class Recipes extends RecipeProviderBase implements CraftingExtension, Co
         this.shaped(RecipeCategory.TOOLS, ModItems.netheriteHammer, "  h", " s ", "s  ", 'h', ((BaseTool) ModItems.netheriteHammer).getHead(), 's', Tags.Items.RODS_WOODEN);
 
         this.createExcavator(ModItems.woodenExcavator, Ingredient.of(ItemTags.PLANKS));
-        this.createExcavator(ModItems.stoneExcavator, Ingredient.of(Tags.Items.COBBLESTONE));
+        this.createExcavator(ModItems.stoneExcavator, Ingredient.of(Tags.Items.COBBLESTONES));
         this.createExcavator(ModItems.ironExcavator, Ingredient.of(Tags.Items.INGOTS_IRON));
         this.createExcavator(ModItems.goldenExcavator, Ingredient.of(Tags.Items.INGOTS_GOLD));
         this.createExcavator(ModItems.diamondExcavator, Ingredient.of(Tags.Items.GEMS_DIAMOND));
@@ -49,22 +49,22 @@ public class Recipes extends RecipeProviderBase implements CraftingExtension, Co
                 .smelting(Ingredient.of(ModItems.ironHammer, ModItems.ironExcavator), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 200)
                 .unlockedBy("has_item0", has(ModItems.ironHammer))
                 .unlockedBy("has_item1", has(ModItems.ironExcavator))
-                .save(this.consumer(), SimplyTools.getInstance().resource("iron_nugget_from_smelting"));
+                .save(this.output(), SimplyTools.getInstance().resource("iron_nugget_from_smelting"));
         SimpleCookingRecipeBuilder
                 .smelting(Ingredient.of(ModItems.goldenHammer, ModItems.goldenExcavator), RecipeCategory.MISC, Items.GOLD_NUGGET, 0.1f, 200)
                 .unlockedBy("has_item0", has(ModItems.goldenHammer))
                 .unlockedBy("has_item1", has(ModItems.goldenExcavator))
-                .save(this.consumer(), SimplyTools.getInstance().resource("gold_nugget_from_smelting"));
+                .save(this.output(), SimplyTools.getInstance().resource("gold_nugget_from_smelting"));
         SimpleCookingRecipeBuilder
                 .blasting(Ingredient.of(ModItems.ironHammer, ModItems.ironExcavator), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 100)
                 .unlockedBy("has_item0", has(ModItems.ironHammer))
                 .unlockedBy("has_item1", has(ModItems.ironExcavator))
-                .save(this.consumer(), SimplyTools.getInstance().resource("iron_nugget_from_blasting"));
+                .save(this.output(), SimplyTools.getInstance().resource("iron_nugget_from_blasting"));
         SimpleCookingRecipeBuilder
                 .blasting(Ingredient.of(ModItems.goldenHammer, ModItems.goldenExcavator), RecipeCategory.MISC, Items.GOLD_NUGGET, 0.1f, 100)
                 .unlockedBy("has_item0", has(ModItems.goldenHammer))
                 .unlockedBy("has_item1", has(ModItems.goldenExcavator))
-                .save(this.consumer(), SimplyTools.getInstance().resource("gold_nugget_from_blasting"));
+                .save(this.output(), SimplyTools.getInstance().resource("gold_nugget_from_blasting"));
     }
 
     protected void createHammer(Item result, Ingredient material) {

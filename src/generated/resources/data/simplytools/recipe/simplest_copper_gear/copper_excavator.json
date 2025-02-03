@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "simplest_copper_gear"
+    },
+    {
+      "type": "simplytools:vanilla_condition"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "simplytools:copper_excavator_head"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "  h",
+    " s ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:copper_excavator"
+  }
+}

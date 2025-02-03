@@ -3,17 +3,18 @@ package de.melanx.simplytools.items;
 import de.melanx.simplytools.util.ComponentUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class DummyItem extends Item {
@@ -34,9 +35,10 @@ public class DummyItem extends Item {
             return -1;
         }
 
+        @Nonnull
         @Override
-        public int getLevel() {
-            return -1;
+        public TagKey<Block> getIncorrectBlocksForDrops() {
+            return BlockTags.INCORRECT_FOR_WOODEN_TOOL;
         }
 
         @Override
@@ -68,7 +70,7 @@ public class DummyItem extends Item {
     }
 
     @Override
-    public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
+    public void appendHoverText(@Nonnull ItemStack stack, @Nonnull TooltipContext context, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag isAdvanced) {
         if (!this.missingMods.isEmpty()) {
             tooltip.add(ComponentUtil.getTooltip("compat.not_loaded_list").withStyle(ChatFormatting.RED));
             for (String modid : this.missingMods) {
@@ -78,6 +80,6 @@ public class DummyItem extends Item {
             }
         }
 
-        super.appendHoverText(stack, level, tooltip, isAdvanced);
+        super.appendHoverText(stack, context, tooltip, isAdvanced);
     }
 }

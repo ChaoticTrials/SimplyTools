@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "mm ",
+    "mmm",
+    " mm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:wooden_hammer_head"
+  }
+}

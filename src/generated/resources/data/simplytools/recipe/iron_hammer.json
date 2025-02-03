@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "h": {
+      "item": "simplytools:iron_hammer_head"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "  h",
+    " s ",
+    "s  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:iron_hammer"
+  }
+}

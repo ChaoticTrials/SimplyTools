@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "pattern": [
+    "mm ",
+    "mmm",
+    " mm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:iron_hammer_head"
+  }
+}

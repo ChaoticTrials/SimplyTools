@@ -5,15 +5,15 @@ import de.melanx.simplytools.ModItems;
 import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.VanillaCondition;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ICondition;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import org.moddingx.libx.datagen.DatagenContext;
 import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
 import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
@@ -38,12 +38,12 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
         this.createHammer(ModItems.glowstoneHammer, Ingredient.of(Items.GLOWSTONE));
         this.createHammer(ModItems.lapisHammer, Ingredient.of(Tags.Items.STORAGE_BLOCKS_LAPIS));
         this.createHammer(ModItems.netherHammer, Ingredient.of(Items.NETHER_BRICKS));
-        this.createHammer(ModItems.obsidianHammer, Ingredient.of(Tags.Items.OBSIDIAN));
+        this.createHammer(ModItems.obsidianHammer, Ingredient.of(Tags.Items.OBSIDIANS));
         this.createHammer(ModItems.paperHammer, Ingredient.of(ModItems.paperBundle));
-        this.createHammer(ModItems.prismarineHammer, Ingredient.of(Tags.Items.DUSTS_PRISMARINE));
-        this.createHammer(ModItems.quartzHammer, Ingredient.of(Tags.Items.STORAGE_BLOCKS_QUARTZ));
+        this.createHammer(ModItems.prismarineHammer, Ingredient.of(Tags.Items.GEMS_PRISMARINE));
+        this.createHammer(ModItems.quartzHammer, Ingredient.of(Items.QUARTZ_BLOCK));
         this.createHammer(ModItems.redstoneHammer, Ingredient.of(Tags.Items.STORAGE_BLOCKS_REDSTONE));
-        this.createHammer(ModItems.slimeHammer, Ingredient.of(Tags.Items.SLIMEBALLS));
+        this.createHammer(ModItems.slimeHammer, Ingredient.of(Tags.Items.SLIME_BALLS));
 
         this.createExcavator(ModItems.boneExcavator, Ingredient.of(Tags.Items.BONES));
         this.createExcavator(ModItems.coalExcavator, Ingredient.of(Items.COAL));
@@ -54,12 +54,12 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
         this.createExcavator(ModItems.glowstoneExcavator, Ingredient.of(Items.GLOWSTONE));
         this.createExcavator(ModItems.lapisExcavator, Ingredient.of(Tags.Items.STORAGE_BLOCKS_LAPIS));
         this.createExcavator(ModItems.netherExcavator, Ingredient.of(Items.NETHER_BRICKS));
-        this.createExcavator(ModItems.obsidianExcavator, Ingredient.of(Tags.Items.OBSIDIAN));
+        this.createExcavator(ModItems.obsidianExcavator, Ingredient.of(Tags.Items.OBSIDIANS));
         this.createExcavator(ModItems.paperExcavator, Ingredient.of(ModItems.paperBundle));
-        this.createExcavator(ModItems.prismarineExcavator, Ingredient.of(Tags.Items.DUSTS_PRISMARINE));
-        this.createExcavator(ModItems.quartzExcavator, Ingredient.of(Tags.Items.STORAGE_BLOCKS_QUARTZ));
+        this.createExcavator(ModItems.prismarineExcavator, Ingredient.of(Tags.Items.GEMS_PRISMARINE));
+        this.createExcavator(ModItems.quartzExcavator, Ingredient.of(Items.QUARTZ_BLOCK));
         this.createExcavator(ModItems.redstoneExcavator, Ingredient.of(Tags.Items.STORAGE_BLOCKS_REDSTONE));
-        this.createExcavator(ModItems.slimeExcavator, Ingredient.of(Tags.Items.SLIMEBALLS));
+        this.createExcavator(ModItems.slimeExcavator, Ingredient.of(Tags.Items.SLIME_BALLS));
     }
 
     @Override
@@ -72,7 +72,7 @@ public class ConditionalRecipes extends RecipeProviderBase implements CraftingEx
 
     private ResourceLocation output(@Nonnull Item item) {
         //noinspection ConstantConditions
-        return this.mod.resource(CompatHelper.MOREVANILLATOOLS + "/" + ForgeRegistries.ITEMS.getKey(item).getPath());
+        return this.mod.resource(CompatHelper.MOREVANILLATOOLS + "/" + BuiltInRegistries.ITEM.getKey(item).getPath());
     }
 
     private void createHammer(Item result, Ingredient material) {

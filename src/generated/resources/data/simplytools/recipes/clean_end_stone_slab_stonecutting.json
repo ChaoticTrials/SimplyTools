@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "simplytools:clean_end_stone"
-  },
-  "result": "simplytools:clean_end_stone_slab"
-}

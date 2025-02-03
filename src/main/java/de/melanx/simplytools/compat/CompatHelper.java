@@ -5,18 +5,18 @@ import de.melanx.simplytools.SimplyTools;
 import de.melanx.simplytools.config.ModConfig;
 import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.items.DummyItem;
-import io.github.lieonlion.enderite.init.ToolMaterialsInit;
-import net.indevo.simplest_copper_gear.item.ModToolTiers;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.NeoForge;
+import net.teamsolar.simplest_copper_gear.item.ModToolTiers;
 
 import javax.annotation.Nonnull;
 import java.util.*;
@@ -30,7 +30,7 @@ public class CompatHelper {
 
     public static void loadTiers() {
         RegisterTiersEvent event = new RegisterTiersEvent();
-        MinecraftForge.EVENT_BUS.post(event);
+        NeoForge.EVENT_BUS.post(event);
         event.getTiersByModid().forEach((modid, map) -> {
             if (ModList.get().isLoaded(modid)) {
                 LOADED_TIERS.putAll(map);
@@ -44,8 +44,8 @@ public class CompatHelper {
 
         if (ModList.get().isLoaded(ENDERITE)) {
             SimplyTools.LOGGER.info(ENDERITE + " is loaded.");
-            LOADED_TIERS.put("enderite", ToolMaterialsInit.ENDERITE);
-            LOADED_TIERS.put("obsidian_infused_enderite", ToolMaterialsInit.OBSIDIAN_INFUSED);
+//            LOADED_TIERS.put("enderite", ToolMaterialsInit.ENDERITE);
+//            LOADED_TIERS.put("obsidian_infused_enderite", ToolMaterialsInit.OBSIDIAN_INFUSED);
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {
@@ -92,18 +92,18 @@ public class CompatHelper {
         Set<Ingredient> ingredients = new HashSet<>();
         for (ResourceLocation id : ids) {
             if (id.getNamespace().startsWith("#")) {
-                TagKey<Item> tag = TagKey.create(Registries.ITEM, new ResourceLocation(id.getNamespace().replace("#", ""), id.getPath()));
+                TagKey<Item> tag = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(id.getNamespace().replace("#", ""), id.getPath()));
                 ingredients.add(Ingredient.of(tag));
             } else {
-                Item item = ForgeRegistries.ITEMS.getValue(id);
-                if (item == null) {
-                    SimplyTools.LOGGER.info("Item doesn't exist: " + id);
+                Item item = BuiltInRegistries.ITEM.get(id);
+                if (item == Items.AIR) {
+                    SimplyTools.LOGGER.info("Item doesn't exist: {}", id);
                 }
                 ingredients.add(Ingredient.of(item));
             }
         }
 
-        return ingredients.isEmpty() ? Ingredient.EMPTY : Ingredient.merge(ingredients);
+        return ingredients.isEmpty() ? Ingredient.EMPTY : Ingredient.fromValues(ingredients.stream().flatMap(i -> Arrays.stream(i.getValues())));
     }
 
     public static boolean isLoaded(String modid) {
@@ -132,11 +132,17 @@ public class CompatHelper {
                 return base.getAttackDamageBonus();
             }
 
+            @Nonnull
             @Override
-            public int getLevel() {
-                //noinspection deprecation
-                return base.getLevel();
+            public TagKey<Block> getIncorrectBlocksForDrops() {
+                return base.getIncorrectBlocksForDrops();
             }
+
+//            @Override
+//            public int getLevel() {
+//                //noinspection deprecation
+//                return base.getLevel();
+//            }
 
             @Override
             public int getEnchantmentValue() {

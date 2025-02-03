@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "simplytools:vanilla_condition"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "pattern": [
+    "mm ",
+    "mmm",
+    " mm"
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:quartz_hammer_head"
+  }
+}

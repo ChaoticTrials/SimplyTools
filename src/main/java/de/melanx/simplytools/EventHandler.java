@@ -4,8 +4,8 @@ import de.melanx.simplytools.items.BaseTool;
 import de.melanx.simplytools.util.BlockBreaker;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.event.level.BlockEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 
 public class EventHandler {
 

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "morevanillatools"
+    },
+    {
+      "type": "simplytools:vanilla_condition"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "tag": "c:obsidians"
+    }
+  },
+  "pattern": [
+    "mmm",
+    "mmm",
+    " m "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:obsidian_excavator_head"
+  }
+}

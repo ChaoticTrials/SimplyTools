@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "m": {
+      "tag": "c:gems/diamond"
+    }
+  },
+  "pattern": [
+    "mmm",
+    "mmm",
+    " m "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:diamond_excavator_head"
+  }
+}

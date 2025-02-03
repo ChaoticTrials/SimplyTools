@@ -1,40 +1,25 @@
 package de.melanx.simplytools.util;
 
-import com.google.gson.JsonObject;
-import de.melanx.simplytools.SimplyTools;
+import com.mojang.serialization.MapCodec;
 import de.melanx.simplytools.config.ModConfig;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.common.crafting.conditions.ICondition;
-import net.minecraftforge.common.crafting.conditions.IConditionSerializer;
+import net.neoforged.neoforge.common.conditions.ICondition;
+
+import javax.annotation.Nonnull;
 
 public class VanillaCondition implements ICondition {
 
-    public static final ResourceLocation KEY = new ResourceLocation(SimplyTools.getInstance().modid, "vanilla_plus");
+    public static final VanillaCondition INSTANCE = new VanillaCondition();
+
+    public static MapCodec<VanillaCondition> CODEC = MapCodec.unit(INSTANCE).stable();
 
     @Override
-    public ResourceLocation getID() {
-        return KEY;
-    }
-
-    @Override
-    public boolean test(IContext context) {
+    public boolean test(@Nonnull IContext context) {
         return !ModConfig.vanillaOnly;
     }
 
-    public static final IConditionSerializer<VanillaCondition> SERIALIZER = new IConditionSerializer<>() {
-        @Override
-        public void write(JsonObject json, VanillaCondition value) {
-            // nothing
-        }
-
-        @Override
-        public VanillaCondition read(JsonObject json) {
-            return new VanillaCondition();
-        }
-
-        @Override
-        public ResourceLocation getID() {
-            return KEY;
-        }
-    };
+    @Nonnull
+    @Override
+    public MapCodec<? extends ICondition> codec() {
+        return CODEC;
+    }
 }

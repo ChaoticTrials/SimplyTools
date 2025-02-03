@@ -1,0 +1,25 @@
+{
+  "values": [
+    "simplytools:bone_excavator",
+    "simplytools:coal_excavator",
+    "simplytools:copper_excavator",
+    "simplytools:diamond_excavator",
+    "simplytools:emerald_excavator",
+    "simplytools:ender_excavator",
+    "simplytools:fiery_excavator",
+    "simplytools:glowstone_excavator",
+    "simplytools:golden_excavator",
+    "simplytools:iron_excavator",
+    "simplytools:lapis_excavator",
+    "simplytools:nether_excavator",
+    "simplytools:netherite_excavator",
+    "simplytools:obsidian_excavator",
+    "simplytools:paper_excavator",
+    "simplytools:prismarine_excavator",
+    "simplytools:quartz_excavator",
+    "simplytools:redstone_excavator",
+    "simplytools:slime_excavator",
+    "simplytools:stone_excavator",
+    "simplytools:wooden_excavator"
+  ]
+}

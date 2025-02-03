@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "simplytools:clean_end_stone"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "simplytools:clean_end_stone_button"
+  }
+}

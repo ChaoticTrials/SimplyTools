@@ -9,5 +9,5 @@ import org.moddingx.libx.base.decoration.DecorationContext;
 @RegisterClass(registry = "BLOCK")
 public class ModBlocks {
 
-    public static final DecoratedBlock cleanEndStone = new DecoratedBlock(SimplyTools.getInstance(), DecorationContext.STONE, BlockBehaviour.Properties.copy(Blocks.END_STONE).strength(4.0f, 11.0f));
+    public static final DecoratedBlock cleanEndStone = new DecoratedBlock(SimplyTools.getInstance(), DecorationContext.STONE, BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).strength(4.0f, 11.0f));
 }

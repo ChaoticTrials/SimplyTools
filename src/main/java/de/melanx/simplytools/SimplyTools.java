@@ -1,23 +1,17 @@
 package de.melanx.simplytools;
 
 import de.melanx.simplytools.compat.CompatHelper;
-import de.melanx.simplytools.data.BlockLoot;
-import de.melanx.simplytools.data.BlockStates;
-import de.melanx.simplytools.data.ItemModels;
-import de.melanx.simplytools.data.ToolTags;
+import de.melanx.simplytools.data.*;
 import de.melanx.simplytools.data.recipes.ConditionalRecipes;
 import de.melanx.simplytools.data.recipes.EnderiteRecipes;
 import de.melanx.simplytools.data.recipes.Recipes;
 import de.melanx.simplytools.data.recipes.SimplestCopperGearRecipes;
 import de.melanx.simplytools.util.ClientEventHandler;
-import de.melanx.simplytools.util.VanillaCondition;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import org.moddingx.libx.datagen.DatagenSystem;
 import org.moddingx.libx.mod.ModXRegistration;
 import org.moddingx.libx.registration.RegistrationBuilder;
@@ -30,20 +24,21 @@ public final class SimplyTools extends ModXRegistration {
     public static Logger LOGGER = LoggerFactory.getLogger(SimplyTools.class);
     private static SimplyTools instance;
 
-    public SimplyTools() {
+    public SimplyTools(Dist dist) {
         instance = this;
 
-        CraftingHelper.register(VanillaCondition.SERIALIZER);
-        MinecraftForge.EVENT_BUS.register(new EventHandler());
-        if (FMLEnvironment.dist == Dist.CLIENT) {
-            MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
+        NeoForge.EVENT_BUS.register(new EventHandler());
+        if (dist == Dist.CLIENT) {
+            NeoForge.EVENT_BUS.register(new ClientEventHandler());
         }
 
         DatagenSystem.create(this, system -> {
-            system.addDataProvider(BlockLoot::new);
+            system.addRegistryProvider(EnchantmentProvider::new);
+            system.addRegistryProvider(BlockLoot::new);
             system.addDataProvider(BlockStates::new);
             system.addDataProvider(ItemModels::new);
             system.addDataProvider(ToolTags::new);
+            system.addDataProvider(EnchantmentTagsProvider::new);
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
             system.addDataProvider(SimplestCopperGearRecipes::new);
