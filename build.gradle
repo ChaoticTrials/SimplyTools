@@ -6,9 +6,6 @@ repositories {
     maven {
         url = "https://modmaven.dev/"
     }
-    maven {
-        url "file:///home/melanx/Coding/test_maven/"
-    }
     exclusiveContent {
         forRepository {
             maven {
