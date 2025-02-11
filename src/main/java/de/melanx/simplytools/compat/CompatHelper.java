@@ -138,12 +138,6 @@ public class CompatHelper {
                 return base.getIncorrectBlocksForDrops();
             }
 
-//            @Override
-//            public int getLevel() {
-//                //noinspection deprecation
-//                return base.getLevel();
-//            }
-
             @Override
             public int getEnchantmentValue() {
                 return base.getEnchantmentValue();

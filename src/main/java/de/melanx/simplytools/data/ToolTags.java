@@ -32,9 +32,12 @@ public class ToolTags extends CommonTagsProviderBase {
     @Override
     public void setup() {
         this.item(TOOLS_RANGED).addTag(TOOLS_HAMMERS).addTag(TOOLS_EXCAVATORS);
-        this.item(Tags.Items.TOOLS).addTag(TOOLS_RANGED);
-        this.item(Tags.Items.MINING_TOOL_TOOLS).addTag(TOOLS_RANGED);
+        this.item(Tags.Items.MINING_TOOL_TOOLS).addTag(TOOLS_HAMMERS);
         this.item(Tags.Items.MELEE_WEAPON_TOOLS).addTag(TOOLS_HAMMERS);
+
+        this.item(ItemTags.MINING_ENCHANTABLE).addTag(TOOLS_RANGED);
+        this.item(ItemTags.MINING_LOOT_ENCHANTABLE).addTag(TOOLS_RANGED);
+        this.item(ItemTags.DURABILITY_ENCHANTABLE).addTag(TOOLS_RANGED);
 
         this.block(INCORRECT_FOR_HIGHER_TOOL);
     }
