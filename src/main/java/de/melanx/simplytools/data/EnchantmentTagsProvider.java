@@ -14,6 +14,6 @@ public class EnchantmentTagsProvider extends TagProviderBase<Enchantment> {
 
     @Override
     protected void setup() {
-        this.tag(EnchantmentTags.TRADEABLE).add(EnchantmentProvider.POWER_OF_THE_DEPTH);
+        this.tag(EnchantmentTags.NON_TREASURE).add(EnchantmentProvider.POWER_OF_THE_DEPTH);
     }
 }
