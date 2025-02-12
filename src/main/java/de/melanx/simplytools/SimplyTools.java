@@ -3,7 +3,6 @@ package de.melanx.simplytools;
 import de.melanx.simplytools.compat.CompatHelper;
 import de.melanx.simplytools.data.*;
 import de.melanx.simplytools.data.recipes.ConditionalRecipes;
-import de.melanx.simplytools.data.recipes.EnderiteRecipes;
 import de.melanx.simplytools.data.recipes.Recipes;
 import de.melanx.simplytools.data.recipes.SimplestCopperGearRecipes;
 import de.melanx.simplytools.util.ClientEventHandler;
@@ -42,7 +41,6 @@ public final class SimplyTools extends ModXRegistration {
             system.addDataProvider(Recipes::new);
             system.addDataProvider(ConditionalRecipes::new);
             system.addDataProvider(SimplestCopperGearRecipes::new);
-            system.addDataProvider(EnderiteRecipes::new);
         });
 
         CompatHelper.loadTiers();

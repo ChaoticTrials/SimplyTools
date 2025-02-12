@@ -23,7 +23,6 @@ import java.util.*;
 
 public class CompatHelper {
 
-    public static String ENDERITE = "lolenderite";
     public static String MOREVANILLATOOLS = "morevanillatools";
     public static String SIMPLEST_COPPER_GEAR = "simplest_copper_gear";
     private static final Map<String, Tier> LOADED_TIERS = new HashMap<>();
@@ -40,12 +39,6 @@ public class CompatHelper {
         if (ModList.get().isLoaded(SIMPLEST_COPPER_GEAR)) {
             SimplyTools.LOGGER.info(SIMPLEST_COPPER_GEAR + " is loaded.");
             LOADED_TIERS.put("copper", ModToolTiers.COPPER);
-        }
-
-        if (ModList.get().isLoaded(ENDERITE)) {
-            SimplyTools.LOGGER.info(ENDERITE + " is loaded.");
-//            LOADED_TIERS.put("enderite", ToolMaterialsInit.ENDERITE);
-//            LOADED_TIERS.put("obsidian_infused_enderite", ToolMaterialsInit.OBSIDIAN_INFUSED);
         }
 
         if (ModList.get().isLoaded(MOREVANILLATOOLS)) {

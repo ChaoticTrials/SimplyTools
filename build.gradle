@@ -93,5 +93,4 @@ dependencies {
     implementation "de.melanx:MoreVanillaTools:${morevanillatoolsVersion}"
 
     implementation "curse.maven:simplest-copper-gear-984803:6110163" // Simplest Copper Gear v1.0.6
-//    implementation curse.mod(550532, 4768456) // LieOnLion's Enderite 2.0.0 + 1.20.1
 }
